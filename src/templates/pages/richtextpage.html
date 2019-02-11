@@ -1,0 +1,19 @@
+{% extends "pages/page.html" %}
+
+{% load mezzanine_tags %}
+
+<!-- template used for about us, etc etc pages -->
+
+{% block breadcrumb %}
+{% endblock breadcrumb %}
+
+{% block left_panel %}
+{% endblock %}
+
+{% block main %}{{ block.super }}
+
+{% editable page.richtextpage.content %}
+{{ page.richtextpage.content|richtext_filters|safe }}
+{% endeditable %}
+
+{% endblock %}

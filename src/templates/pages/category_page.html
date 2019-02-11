@@ -1,0 +1,19 @@
+{% load i18n static mezzanine_tags pages_tags mathfilters shop_tags el_pagination_tags patch_tags %}
+
+{% lazy_paginate products %}
+
+{% for product in products %}
+    <li class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+        <a href="{{ product.get_absolute_url }}">
+{#                        <img src="{% static 'img/placeholders/product02.jpg' %}" alt="转运琉璃烛" class="img-responsive center-block">#}
+            <img src="{{ MEDIA_URL }}{% thumbnail product.image 327 477 %}" alt="{{ product.title }}" class="img-responsive center-block">
+            <p class="pl-title">
+                {{ product.title }}
+            </p>
+            <hr class="pl-title-border">
+            <p class="product-price">{{ product.price|currency_2 }}</p>
+{#                        <span></span>#}
+        </a>
+    </li>
+{% endfor %}
+{% show_more %}

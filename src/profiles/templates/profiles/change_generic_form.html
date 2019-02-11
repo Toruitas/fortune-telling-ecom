@@ -1,0 +1,16 @@
+{% extends "accounts/account_form.html" %}
+{% load i18n mezzanine_tags accounts_tags %}
+
+{% block meta_title %}{{ title }}{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block body_id %}{% endblock %}
+
+{% block breadcrumb_menu %}
+{% endblock %}
+
+{% block left_panel %}
+{% endblock %}
+
+{% block main %}
+{{ block.super }}
+{% endblock main %}

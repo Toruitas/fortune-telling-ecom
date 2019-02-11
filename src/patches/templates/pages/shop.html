@@ -1,0 +1,225 @@
+{% extends "pages/page.html" %}
+
+{% load mezzanine_tags shop_tags i18n mathfilters%}
+{% block body_id %}category{% endblock %}
+
+{% block carousel %}
+    <div class="visible-lg-block row">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="item active index-scroller">
+              <a href="{{ featured_products.0.get_absolute_url }}"><img class="first-slide slider-image"
+                  {% if slider_items.0.featured_image %}
+                    src="{{ MEDIA_URL }}{% thumbnail featured_products.0.featured_image 1170 550 %}"
+                  {% else %}
+                    src="{{ MEDIA_URL }}{% thumbnail featured_products.0.image 1170 550 %}"
+                  {% endif %}
+                 alt='First slide'>
+              </a>
+              <div class="container">
+                <div class="carousel-caption white-text">
+                  <h1>{{ featured_products.0.title }}</h1>
+{#                  <p>{{ slider_items.0.content|richtext_filters|safe|truncatewords:5 }}</p>#}
+{#                  <p><a class="btn btn-lg btn-primary" href="{{ slider_items.0.get_absolute_url }}" role="button">Sign up today</a></p>#}
+                </div>
+              </div>
+            </div>
+            <div class="item index-scroller">
+                <a href="{{ featured_products.1.get_absolute_url }}"><img class="second-slide slider-image"
+                  {% if slider_items.1.featured_image %}
+                    src="{{ MEDIA_URL }}{% thumbnail featured_products.1.featured_image 1170 550 %}"
+                  {% else %}
+                    src="{{ MEDIA_URL }}{% thumbnail featured_products.1.image 1170 550 %}"
+                  {% endif %}
+                 alt='Second slide'>
+                </a>
+              <div class="container">
+                <div class="carousel-caption white-text">
+                  <h1>{{ featured_products.1.title }}</h1>
+{#                  <p>{{ slider_items.1.content|richtext_filters|safe|truncatewords:5 }}</p>#}
+{#                  <p><a class="btn btn-lg btn-primary" href="{{ slider_items.1.get_absolute_url }}" role="button">Learn more</a></p>#}
+                </div>
+              </div>
+            </div>
+            <div class="item index-scroller">
+                <a href="{{ featured_products.2.get_absolute_url }}">
+                    <img class="third-slide slider-image"
+                      {% if slider_items.2.featured_image %}
+                        src="{{ MEDIA_URL }}{% thumbnail featured_products.2.featured_image 1170 550 %}"
+                      {% else %}
+                        src="{{ MEDIA_URL }}{% thumbnail featured_products.2.image 1170 550 %}"
+                      {% endif %}
+                     alt='Third slide'>
+                </a>
+              <div class="container">
+                <div class="carousel-caption white-text">
+                  <h1>{{ featured_products.2.title }}</h1>
+{#                  <p>{{ slider_items.2.content|richtext_filters|safe|truncatewords:5 }}</p>#}
+{#                  <p><a class="btn btn-lg btn-primary" href="{{ slider_items.2.get_absolute_url }}" role="button">Browse gallery</a></p>#}
+                </div>
+              </div>
+            </div>
+            <div class="item index-scroller">
+                <a href="{{ featured_products.3.get_absolute_url }}">
+                  <img class="fourth-slide slider-image"
+                      {% if featured_products.3.featured_image %}
+                        src="{{ MEDIA_URL }}{% thumbnail featured_products.3.featured_image 1170 550 %}"
+                      {% else %}
+                        src="{{ MEDIA_URL }}{% thumbnail featured_products.3.image 1170 550 %}"
+                      {% endif %}
+                     alt='Fourth slide'>
+                </a>
+              <div class="container">
+                <div class="carousel-caption white-text">
+                  <h1>{{ featured_products.3.title }}</h1>
+{#                  <p>{{ slider_items.3.content|richtext_filters|safe|truncatewords:5 }}</p>#}
+{#                  <p><a class="btn btn-lg btn-primary" href="{{ slider_items.3.get_absolute_url }}" role="button">Browse gallery</a></p>#}
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left white-text" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right white-text" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div><!-- /.carousel -->
+    </div>
+{% endblock %}
+
+
+{% block left_panel %}
+{#<div class="shop-search-container">#}
+{#    {% search_form "shop.Product" %}#}
+{#</div>#}
+{{ block.super }}
+{% endblock %}
+
+{% block main %}{{ block.super }}
+
+{#{% editable page.category.content %}#}
+{#{{ page.category.content|safe }}#}
+{#{% endeditable %}#}
+
+
+{#{% if child_categories %}#}
+{#<div class="row shop-category-list">#}
+{#{% if settings.SHOP_CATEGORY_USE_FEATURED_IMAGE %}#}
+{#    {% for category in child_categories %}#}
+{#    <div class="col-xs-6 col-sm-4 col-lg-3">#}
+{#    <a href="{{ category.get_absolute_url }}" class="thumbnail">#}
+{#        {% if category.featured_image %}#}
+{#        <img src="{{ MEDIA_URL }}{% thumbnail category.featured_image 148 148 %}" />#}
+{#        {% else %}#}
+{#        <div class="placeholder"></div>#}
+{#        {% endif %}#}
+{#        <div class="caption">#}
+{#            <h4>{{ category.title }}</h4>#}
+{#        </div>#}
+{#    </a>#}
+{#    </div>  #}
+{#    {% endfor %}#}
+{#{% else %}#}
+{#    {% for category in child_categories %}#}
+{#    <div class="col-xs-6 col-sm-4 col-lg-3">#}
+{#    <a href="{{ category.get_absolute_url }}" class="thumbnail">#}
+{#        <div class="caption"><h4>{{ category.title }}</h4></div>#}
+{#    </a>#}
+{#    </div>#}
+{#    {% endfor %}#}
+{#{% endif %}#}
+{#</div>#}
+{#{% endif %}#}
+
+{% if products.paginator.count != 0 %}
+
+<div class="row">
+    <div class="col-xs-12">
+        <span class="product-count">
+            <b>{{ products.object_list.count }} {% trans 'items' %}</b>
+        </span>
+        <form class="product-sorting pull-right" role="form">
+            <span class="form-group">
+            <label class="control-label" for="sorting-select">{% trans "Sort by" %}</label>
+                <select onchange="location.href = this[this.selectedIndex].value;" class="form-control" id="sorting-select">
+                {% for name, option in settings.SHOP_PRODUCT_SORT_OPTIONS %}
+                {% if "rating" not in option or settings.SHOP_USE_RATINGS %}
+                <option{% if option == products.sort_by %} selected{% endif %}
+                    value="{{ category.get_absolute_url }}?sort={{ option }}{{ querystring }}">
+                    {{ name }}
+                </option>
+                {% endif %}
+                {% endfor %}
+                </select>
+            </span>
+        </form>
+    </div>
+</div>
+
+
+<div class="row product-list">
+{% for product in products.object_list %}
+    <div class="col-xs-12 col-sm-6 col-md-6 my-product-thumb">
+    <a href="{{ product.get_absolute_url }}" class="thumbnail-product">
+    <p>TEST {{  product.price_for_member }}</p>
+        {% if product.image %}
+        <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail product.image 400 600 %}">
+        {% else %}
+        <div class="placeholder"></div>
+        {% endif %}
+        <div class="caption">
+            <h4 class="product-thumbnail-title">{{ product }}</h4>
+        <div class="price-info">
+        {% if product.has_price %}
+            {% if request.user.is_anonymous or request.user.membership.level == "regular"%}
+                <!-- on sale but not member-->
+                {% if product.on_sale %}
+                    <span class="price">{{ product.price|currency }}</span>
+                    <span class="old-price">{{ product.unit_price|currency }}</span>
+                    {% trans 'ON SALE!' %}
+                {% else %}
+                    <span class="price">{{ product.unit_price|currency }}</span>
+                {% endif %}
+                <!-- member -->
+            {% else %}
+                {% if product.on_sale %}
+{#                    {% trans "On sale: " %}#}
+                    <span class="price">
+    {#                    {% trans "Member Price: " %}#}
+                        {{ product.price|currency }}
+                    </span>
+                    <span class="old-price">{{ product.unit_price|currency }}</span>
+                    <span>{% trans 'SALE + DISCOUNT' %}</span>
+                {% else %}
+                    <span class="price">
+    {#                    {% trans "Member Price: " %}#}
+                        {{ product.price|currency }}
+                    </span>
+                    <span class="old-price">{{ product.unit_price|currency }}</span>
+                {% endif %}
+            {% endif %}
+        {% else %}
+            <span class="coming-soon">{% trans "Coming soon" %}</span>
+        {% endif %}
+        </div>
+        </div>
+    </a>
+    </div>
+{% endfor %}
+</div>
+
+{% pagination_for products %}
+
+{% endif %}
+
+{% endblock %}

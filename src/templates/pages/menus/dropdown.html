@@ -1,0 +1,79 @@
+{% load i18n pages_tags %}
+{% spaceless %}
+{% if page_branch_in_menu %}
+
+{% if branch_level == 0 %}
+<ul class="nav navbar-nav">
+    {% for page in page_branch %}
+    {% if not has_home and page.is_primary and forloop.first %}
+    <li{% if on_home %} class="active"{% endif %} id="dropdown-menu-home">
+        <a href="{% url "home" %}">{% trans "Home" %}</a>
+    </li>
+    {% endif %}
+    {% if page.in_menu %}
+    <li class="{% if page.has_children_in_menu %}dropdown{% endif %}
+                {% if page.is_current_or_ascendant %}active{% endif %}"
+        id="{{ page.html_id }}">
+        {% if page.has_children_in_menu %}
+{#            <span>#}
+                <a href="{{ page.get_absolute_url }}"> <!--class="dropdown-toggle disabled"-->
+                {{ page.title }}
+{#                </a>#}
+                <b class="caret menu-caret dropdown-toggle disabled" data-toggle="dropdown"></b>
+                </a>
+                {% page_menu page %}
+{#            </span>#}
+        {% else %}
+            <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+        {% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+{#    <li><a href="{% url "fortune:fortune" %}">{% trans "Fortune" %}</a></li>#}
+{#    <li><a href="{% url "fortune:prayers" %}">{% trans "Prayers" %}</a></li>#}
+    <!-- shopping cart -->
+    <li>{% include "shop/includes/user_panel.html" %}</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+    <!-- language -->
+    <li class="navbar-language-selector">{% include "includes/language_selector.html" %}</li>
+    <!-- user profile & login/out -->
+    {% if request.user.is_authenticated %}
+    <li><a class="navbar-link" href="{% url 'profile' %}">
+            {% trans "Profile" %}
+        </a>
+    </li>
+    <li>
+    <a href="{% url "logout" %}?next={{ request.path }}" class="">
+        {% trans "Log out" %}</a>
+    </li>
+    {% else %}
+    <li>
+    <a href="{% url "login" %}?next={{ request.path }}" class="">
+{#         <span class="glyphicon glyphicon-log-in"></span>#}
+        {% trans "Log in" %}</a>
+    </li>
+    <li><a href="{% url "signup" %}?next={{ request.path }}" class="">
+{#        <span class="glyphicon glyphicon-edit"></span> #}
+        {% trans "Sign up" %}</a>
+    </li>
+    {% endif %}
+</ul>
+
+{% else %}
+<ul class="dropdown-menu">
+    {% for page in page_branch %}
+    {% if page.in_menu %}
+    <li class="{% if page.has_children_in_menu %}dropdown-submenu{% endif %}
+               {% if page.is_current_or_ascendant %}active{% endif %}"
+        id="{{ page.html_id }}">
+        <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+        {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endif %}
+{% endspaceless %}

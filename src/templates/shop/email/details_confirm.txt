@@ -1,0 +1,12 @@
+{% extends "email/base.txt" %}
+{% load i18n %}
+
+{% block main %}
+{% trans "Master Kiki thanks you wholeheartedly" %}
+{% trans "Here are the details for your" %} {{ category }}
+    {% for d in details %}
+{% trans "Class Name" %}: {{ d.title|safe }}
+{% trans "Class Details" %}: {{ d.content|safe }}
+{% endfor %}
+{% trans "Please email us for any changes or errors" %}:{{ SHOP_ORDER_FROM_EMAIL }}
+{% endblock %}

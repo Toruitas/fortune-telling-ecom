@@ -1,0 +1,102 @@
+{% extends "base.html"  %} <!--blog/blog_post_list.html-->
+{% load mezzanine_tags pages_tags static comment_tags keyword_tags rating_tags i18n disqus_tags %}
+
+{% block meta_title %}{{ page.aboutpg.meta_title }}{% endblock %}
+
+{% block extra_css %}
+{#<link rel="stylesheet" href="{% static 'css/jssocials-theme-flat.css' %}">#}
+{#<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.2.1/jssocials-theme-flat.css" />#}
+{% if page.aboutpg.image1 %}
+    <style>
+        .blog-main-img-cont:before{
+            content:'';
+            position:absolute;
+            display:block;
+            width:100%;
+            height:100%;
+            background: url("{{ MEDIA_URL }}{{ page.aboutpg.image1 }}");
+            filter: blur(10px);
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -o-filter: blur(10px);
+            -ms-filter: blur(10px);
+            z-index:-1;
+            background-size:cover;
+            background-position: center center;
+            /*opacity:0.5;*/
+        }
+    </style>
+{% endif %}
+{% endblock %}
+
+
+{% block meta_description %}{% metablock %}
+{{ page.aboutpg.description }}
+{% endmetablock %}{% endblock %}
+
+{% block title %}
+{% endblock %}
+
+{% block carousel %}
+{% if page.aboutpg.image1 %}
+<div class="visible-xs-block">
+    <div class="mobile-hero">
+        <img class="mobile-hero-img img-responsive" src="{{ MEDIA_URL }}{% thumbnail page.aboutpg.image1 736 736  %}">
+    </div>
+</div>
+<div class="visible-lg-block visible-md-block visible-sm-block row no-margin">
+    <div class="col-xs-12 blog-main-img-cont">
+        <img class="blog-main-img" src="{{ MEDIA_URL }}{% thumbnail page.aboutpg.image1 1280 720  %}">
+    </div>
+</div>
+{% endif %}
+{% endblock carousel %}
+
+{% block left_side %}
+{#<div class="col-md-1"><!--empty--></div>#}
+{% endblock left_side %}
+
+
+{% block center %}
+<div class="col-xs-12 col-md-12 about-main-cont">
+    <dl class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+{#        <dd class="col-xs-12 col-sm-12 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">#}
+            {% editable page.aboutpg.title %}
+            <h1 class="blog-list-post-title">
+                <a href="{{ blog_post.get_absolute_url }}">{{ page.aboutpg.title }}</a>
+            </h1>
+            {% endeditable %}
+            {% editable page.aboutpg.content1 %}
+            <div class="blog-post-content">
+            {{ page.aboutpg.content1|richtext_filters|safe }}
+            </div>
+            {% endeditable %}
+{#        </dd>#}
+        <div class="about-form-cont">
+            <h3>{% trans 'Contact Us' %}</h3>
+            <form role="form" action="" method="post">
+                {% csrf_token %}
+                {% fields_for form %}
+                <div class="btn-base" type="submit">
+                    {% trans 'Submit' %}
+                    <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>
+                    <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>
+                </div>
+
+            </form>
+        </div>
+    </dl>
+</div>
+
+{% endblock center %}
+
+
+{% block right_side %}
+{% endblock right_side %}
+
+
+{% block footer_js %}
+{{ block.super }}
+
+{% endblock footer_js %}
+{#    http://dev.wechat.com/wechatapi/messages-moments#}

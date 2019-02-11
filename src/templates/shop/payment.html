@@ -1,0 +1,33 @@
+{% extends "shop/checkout.html" %}
+{% load i18n mezzanine_tags %}
+
+{% block fields %}
+{% if request.cart.has_items %}
+{% errors_for form %}
+{% include "shop/includes/payment_fields.html" %}
+{% fields_for form.other_fields %}
+{% endif %}
+{% endblock %}
+
+
+{# Below JS plus above commented out include are for a dropdown select of payment #}
+{#{% block footer_js %}#}
+{#    {{ block.super }}#}
+{#    <script type="text/javascript">#}
+{#    //http://stackoverflow.com/questions/17165529/select-option-from-bootstrap-dropdown-that-option-reveals-more-hidden-content#}
+{##}
+{#    $("select").change(function(){#}
+{#        $(this).find("option:selected").each(function(){#}
+{#            var optionValue = $(this).attr("value");#}
+{#            if(optionValue){#}
+{#                $(".box").not("." + optionValue).hide();#}
+{#                $("." + optionValue).show();#}
+{#                $("#id_payment_type").val(optionValue);#}
+{#            } else{#}
+{#                $(".box").hide();#}
+{#            }#}
+{#        });#}
+{#    }).change();#}
+{##}
+{#    </script>#}
+{#{% endblock %}#}

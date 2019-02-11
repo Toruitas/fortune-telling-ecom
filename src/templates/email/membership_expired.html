@@ -1,0 +1,12 @@
+{% extends "email/base.html" %}
+{% load i18n %}
+
+{% block main %}
+<p>
+    {% trans "Your membership has expired!" %}
+</p>
+<p>
+    {% trans "If you don't want to lose your benefits, follow this link to renew now." %}
+    <a href="http://{{ request.get_host }}{% url 'profiles:upgrade' %}">{{ obj }}</a>
+</p>
+{% endblock %}

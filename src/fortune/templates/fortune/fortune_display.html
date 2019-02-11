@@ -1,0 +1,44 @@
+{% extends "fortune/fortune_base.html" %}
+
+{% load mezzanine_tags i18n %}
+
+{% block left_side %}
+{% endblock %}
+
+{% block center %}
+{{ block.super }}
+
+<div id="fortune-title">
+    <h1>{% trans 'Your Fortune' %}</h1>
+</div>
+
+<div id="fortune-explanation">
+    <p></p>
+</div>
+
+<div id="fortune-container row">
+{% for c in displayed_chars %}
+{#    <div class="">#}
+        <div class="fortune-chars col-xs-3 col-sm-3 col-md-3">
+            <h2 class="fortune-title">{{ c.0|upper }}</h2>
+            <div class="fortune-inner">
+                <h1 class="fortune-char fortune-char-bottom">{{ c.1.0 }}</h1>
+                <p class="fortune-pinyin">{{ c.2.0 }}</p>
+{#                <br>#}
+                <p class="fortune-element">{{ c.2.2 }}</p>
+                <p class="fortune-element">{{ c.2.3 }}</p>
+            </div>
+            <div class="fortune-inner">
+                <h1 class="fortune-char fortune-char-bottom">{{ c.1.1 }}</h1>
+                <p class="fortune-pinyin">{{ c.3.0 }}</p>
+                <p class="fortune-animal">{{ c.3.4 }}</p>
+                <p class="fortune-element">{{ c.3.2 }}</p>
+                <p class="fortune-element">{{ c.3.3 }}</p>
+            </div>
+        </div>
+{#    </div>#}
+{% endfor %}
+</div>
+
+{% endblock %}
+

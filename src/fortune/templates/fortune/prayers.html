@@ -1,0 +1,45 @@
+{% extends "fortune/fortune_base.html" %}
+{% load mezzanine_tags i18n static %}
+
+{% block left_side %}
+{% endblock %}
+
+{% block main %}
+{% if request.user.membership.is_member %}
+{{ block.super }}
+
+<div id="prayer-container row">
+
+{% blocktrans %}
+    Need instructions on this
+{% endblocktrans %}
+
+{% for p in prayers %}
+    <div class="prayer-cont"></div>
+{% endfor %}
+</div>
+
+{% else %}
+    <div>
+        <p class="fortune-non-member">
+        {% blocktrans %}
+            You must become a member for Kiki to help turn your fortune around.
+        {% endblocktrans %}
+        </p>
+{#        <button class="custom-btn btn-5"><span>Become Member</span></button>#}
+{#        <div class="btn-base hot"><a href="#">{% trans 'Become Member' %}</a></div>#}
+{#        <a href="{% url 'profile' %}"><div class="btn-base">{% trans 'Join Here' %}</div></a>#}
+        <a href="{% url 'profile' %}">
+            <div class="btn-base">
+                <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>
+                <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>
+                <p>{% trans "Get Premium" %}</p>
+            </div>
+        </a>
+    </div>
+{% endif %}
+{% endblock main %}
+
+
+{% block right_side %}
+{% endblock %}

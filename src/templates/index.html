@@ -1,0 +1,376 @@
+{% extends "base.html" %}
+{% load staticfiles mezzanine_tags i18n %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+
+{% block extra_css %}
+{% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
+    <style>
+        .home_article_img_cont:before{
+            content:'';
+            position:absolute;
+            display:block;
+            width:100%;
+            height:100%;
+            background: url("{{ MEDIA_URL }}{{ blog_post.featured_image }}");
+            filter: blur(10px);
+            -webkit-filter: blur(3px);
+            -moz-filter: blur(3px);
+            -o-filter: blur(3px);
+            -ms-filter: blur(3px);
+            z-index:0;
+            background-size:cover;
+            background-position: center center;
+            /*opacity:0.5;*/
+        }
+    </style>
+{% endif %}
+{% endblock %}
+
+{% block carousel %}
+    <div class="visible-xs-block">
+        <div class="mobile-hero">
+            <a href="{{ slider_items.0.get_absolute_url }}">
+              <img class="mobile-hero-img img-responsive" src="{{ MEDIA_URL }}{% thumbnail slider_items.0.featured_image 736 736 %}" alt="First slide">
+                <div class="carousel-caption">
+                  <h1>{{ slider_items.0.title }}</h1>
+{#                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vehicula nunc. Sed ullamcorper sem nec elit sagittis, non molestie lorem commodo. </p>#}
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="visible-lg-block visible-md-block visible-sm-block">
+        <div id="myCarousel" class="carousel slide index-scroller blog-main-img-cont" data-ride="carousel">
+          <!-- Indicators -->
+{#          <ol class="carousel-indicators">#}
+{#            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>#}
+{#            <li data-target="#myCarousel" data-slide-to="1"></li>#}
+{#            <li data-target="#myCarousel" data-slide-to="2"></li>#}
+{#          </ol>#}
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <a href="{{ slider_items.0.get_absolute_url }}">
+                  <img class="first-slide blog-main-img" src="{{ MEDIA_URL }}{% thumbnail slider_items.0.featured_image 1298 715 %}" alt="First slide">
+                  <div class="container">
+                    <div class="carousel-caption">
+                      <h1>{{ slider_items.0.title }}</h1>
+    {#                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vehicula nunc. Sed ullamcorper sem nec elit sagittis, non molestie lorem commodo. </p>#}
+                    </div>
+                  </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="{{ slider_items.1.get_absolute_url }}">
+                    <img class="second-slide blog-main-img" src="{{ MEDIA_URL }}{% thumbnail slider_items.1.featured_image 1298 715  %}" alt="Second slide">
+                  <div class="container">
+                    <div class="carousel-caption">
+                      <h1>{{ slider_items.1.title }}</h1>
+    {#                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>#}
+                    </div>
+                  </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="{{ slider_items.2.get_absolute_url }}">
+                  <img class="third-slide blog-main-img" src="{{ MEDIA_URL }}{% thumbnail slider_items.2.featured_image 1298 715  %}" alt="Third slide">
+    {#              <img class="third-slide blog-main-img" src="{{ MEDIA_URL }}{% thumbnail slider_items.2.featured_image 1280 720  %}" alt="Third slide">#}
+                  <div class="container">
+                    <div class="carousel-caption">
+                      <h1>{{ slider_items.2.title }}</h1>
+    {#                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>#}
+                    </div>
+                  </div>
+                </a>
+            </div>
+          </div>
+            <div class="carousel-set">
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                </a>
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active">
+                    <span></span>
+                    <div class="line"></div>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="1" class="">
+                    <span></span>
+                    <div class="line"></div>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="2" class="">
+                    <span></span>
+                    </li>
+                </ol>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                </a>
+            </div>
+{#            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">#}
+{#                <span class="glyphicon glyphicon-chevron-left white-text" aria-hidden="true"></span>#}
+{#                <span class="sr-only">Previous</span>#}
+{#            </a>#}
+{#            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">#}
+{#              <span class="glyphicon glyphicon-chevron-right white-text" aria-hidden="true"></span>#}
+{#              <span class="sr-only">Next</span>#}
+{#            </a>#}
+        </div><!-- /.carousel -->
+    </div>
+{% endblock %}
+
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block left_side %}
+{% endblock %}
+
+{% block main-content %}
+
+
+<div class="about">
+    <div class="about_bg">
+        <div class="container">
+            <div class="about_title">
+                <span>
+                    <span class="ch-title">关于我们</span>
+                    <small>about us</small>
+                </span>
+            </div>
+        </div>
+        {% if LANGUAGE_CODE == "en" %}
+        <div class="about_content">
+            <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 about_text">
+                    <span class="about_tl"><img src="{% static 'img/decor/about_lt.png' %}" class="img-responsive"></span>
+                    <span class="about_br"><img src="{% static 'img/decor/about_rb.png' %}" class="img-responsive"></span>
+                    <dl class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <dt class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <img src="{% static 'img/placeholders/aboutimg_min.jpg' %}" alt="" class="img-responsive center-block">
+                    </dt>
+                    <dd class="col-xs-12 col-sm-12 col-md-9 col-lg-9">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>SE
+                     Brilliant Limited consider to insight into the natural disasters and
+                    fleeting fengshui flying star as company’s responsibility.<br>And
+                    explain some of the little- known natural disasters and epidemics, the
+                    mysterious flying stars of the location of the infinity is very
+                    consistent.<br>From the scientific point of view and digital logic to
+                    explain to the customer about the so-called fengshui metaphysics of the
+                    secret, in fact, the results of digital projections, to share the
+                    fengshui subtle place, and customers brainstorming, while customers
+                    solve some difficult problems. Such as litigation, human relationship
+                    popularity.<br>
+                    <a href="{% url 'page' 'about-us'  %}"><img src="{% static 'img/decor/more.png' %}" alt="更多" class="img-responsive"></a>
+                    </dd>
+                    </dl>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <li class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <a href="{% url 'page' 'about-us' %}">
+                        <img src="{% static 'img/decor/about01.png' %}" alt="公司文化" class="img-responsive img1">
+                        <img src="{% static 'img/decor/about01_hover.png' %}" alt="公司文化" class="img-responsive img2">
+                    </a>
+                </li>
+                <li class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <a href="{% url 'page' 'about-us' %}">
+                        <img src="{% static 'img/decor/about02.png' %}" alt="公司简介" class="img-responsive img1">
+                        <img src="{% static 'img/decor/about02_hover.png' %}" alt="公司简介" class="img-responsive img2">
+                    </a>
+                </li>
+                <li class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <a href="{% url 'page' 'about-us' %}">
+                        <img src="{% static 'img/decor/about03.png' %}" alt="公司历程" class="img-responsive img1">
+                        <img src="{% static 'img/decor/about03_hover.png' %}" alt="公司历程" class="img-responsive img2">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        {% else %}
+            <div class="about-content-ch">
+                <div class="container">
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div class="about-ch-frame">
+                            <p class="ch-txt col-xs-10">
+                                {% blocktrans %}
+                                    赵客缦胡缨，吴钩霜雪明。银鞍照白马，飒沓如流星。
+                                    十步杀一人，千里不留行。事了拂衣去，深藏身与名。
+                                    闲过信陵饮，脱剑膝前横。将炙啖朱亥，持觞劝侯嬴。
+                                    三杯吐然诺，五岳倒为轻。眼花耳热后，意气素霓生。
+                                    救赵挥金槌，邯郸先震惊。千秋二壮士，烜赫大梁城。
+                                    纵死侠骨香，不惭世上英。谁能书阁下，白首太玄经。
+                                    床前明月光，疑似地上霜，举头望明月，低头思故乡
+                                {% endblocktrans %}
+                            </p>
+                            <h3 class="ch-title col-xs-2">{% trans '公司文化' %}</h3>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div class="about-ch-frame">
+                            <p class="ch-txt col-xs-10">
+                                {% blocktrans %}
+                                    赵客缦胡缨，吴钩霜雪明。银鞍照白马，飒沓如流星。
+                                    十步杀一人，千里不留行。事了拂衣去，深藏身与名。
+                                    闲过信陵饮，脱剑膝前横。将炙啖朱亥，持觞劝侯嬴。
+                                    三杯吐然诺，五岳倒为轻。眼花耳热后，意气素霓生。
+                                    救赵挥金槌，邯郸先震惊。千秋二壮士，烜赫大梁城。
+                                    纵死侠骨香，不惭世上英。谁能书阁下，白首太玄经。
+                                    床前明月光，疑似地上霜，举头望明月，低头思故乡
+                                {% endblocktrans %}
+                            </p>
+                            <h3 class="ch-title col-xs-2">{% trans '公司简介' %}</h3>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div class="about-ch-frame">
+                            <p class="ch-txt col-xs-10">
+                                {% blocktrans %}
+                                    赵客缦胡缨，吴钩霜雪明。银鞍照白马，飒沓如流星。
+                                    十步杀一人，千里不留行。事了拂衣去，深藏身与名。
+                                    闲过信陵饮，脱剑膝前横。将炙啖朱亥，持觞劝侯嬴。
+                                    三杯吐然诺，五岳倒为轻。眼花耳热后，意气素霓生。
+                                    救赵挥金槌，邯郸先震惊。千秋二壮士，烜赫大梁城。
+                                    纵死侠骨香，不惭世上英。谁能书阁下，白首太玄经。
+                                    床前明月光，疑似地上霜，举头望明月，低头思故乡
+                                {% endblocktrans %}
+                            </p>
+                            <h3 class="ch-title col-xs-2">{% trans '公司历程' %}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+<div class="article">
+    <div class="article_bg">
+        <div class="container">
+            <div class="article_title">
+                <span>
+                    <span class="ch-title">文章与论坛</span>
+                    <small>articles & forum</small>
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="home_article_img_cont">
+{#                <img src="{% static 'img/placeholders/articleimg.jpg' %}" class="img-responsive center-block">#}
+                    <img src="{{ MEDIA_URL }}{{ blog_post.featured_image }}" class="img-responsive center-block">
+                    <span class="image-bottom-bar-overlay">
+                        <span class="orange-block"></span>
+                        <span class="image-bottom-bar-overlay-text">{% trans 'Latest News' %}</span>
+                    </span>
+                </div>
+            </div>
+            <dl class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <dt class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <span class="col-xs-2 col-sm-1 col-md-4 col-lg-4 date">
+                        <div class="month">{{ blog_post.publish_date.month }}</div>
+                        <div class="day">{{ blog_post.publish_date.day }}</div>
+                        <div class="day">{{ blog_post.publish_date.year }}</div>
+                        <em></em>
+                    </span>
+                    <span class="col-xs-10 col-sm-11 col-md-8 col-lg-8 title">{{ blog_post.title|upper }}</span>
+                </dt>
+            <dd class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                {% editable %}
+                    {{ blog_post.content|richtext_filters|safe|truncatewords_html:100 }}
+                {% endeditable %}
+{#                <a href="{{ blog_post.get_absolute_url }}" target="_blank">#}
+                <a href="{{ blog_post.get_absolute_url }}" class="home-article-more-btn">
+                    <img src="{% static 'img/decor/more.png' %}" alt="更多" class="img-responsive">
+                </a>
+            </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div class="ts_products">
+    <div class="ts_products_bg">
+        <div class="container">
+            <div class="ts_title">
+                <span>
+                    <span class="ch-title">特色商品</span>
+                    <small>featured items</small>
+                </span>
+            </div>
+            <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                {% for product in products %}
+                <li class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+                    <a href="{{ product.get_absolute_url }}">
+{#                        <img src="{% static 'img/placeholders/product02.jpg' %}" alt="转运琉璃烛" class="img-responsive center-block">#}
+                        <img src="{{ MEDIA_URL }}{% thumbnail product.image 327 477 %}" alt="{{ product.title }}" class="img-responsive center-block">
+                        <p>
+                            <span>{{ product.title }}</span>
+                            {% editable product.content %}
+                            {% if LANGUAGE_CODE == "en" %}
+                            {{ product.content|richtext_filters|safe|truncatewords_html:8 }}
+                            {% else %}
+                            {{ product.content|richtext_filters|safe|truncatechars_html:22 }}
+                            {% endif %}
+                            {% endeditable %}
+                        </p>
+{#                        <span></span>#}
+                    </a>
+                </li>
+                {% endfor %}
+{#                <li class="col-xs-12 col-sm-12 col-md-4 col-lg-4">#}
+{#                    <a href="#" target="_blank">#}
+{#                        <img src="{% static 'img/placeholders/product01.jpg' %}" alt="转运琉璃烛" class="img-responsive center-block">#}
+{#                        <p><span>转运琉璃烛</span>商业专用，能增财运，对商店及写字楼最为有利。</p>#}
+{#                    </a>#}
+{#                    <span></span>#}
+{#                </li>#}
+{#                <li class="col-xs-12 col-sm-12 col-md-4 col-lg-4">#}
+{#                    <a href="#" target="_blank">#}
+{#                        <img src="{% static 'img/placeholders/product02.jpg' %}" alt="转运琉璃烛" class="img-responsive center-block">#}
+{#                        <p><span>转运琉璃烛</span>商业专用，能增财运，对商店及写字楼最为有利。</p>#}
+{#                    </a>#}
+{#                    <span></span>#}
+{#                </li>#}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{#<div class="col-sm-12">#}
+{#    <div class="row bump1">#}
+{#        <div class="col-sm-6 index-tile" id="featured-class">#}
+{#            <img class="img-responsive" src="http://www.placecage.com/gif/600/500">#}
+{#            <img class="img-responsive" src="{% static 'img/placeholders/600x500.png' %}">#}
+{#        </div>#}
+{#        <div class="col-sm-6 index-tile" id="fortune">#}
+{#            <img class="img-responsive" src="{% static 'img/placeholders/600x500.png' %}">#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <div class="row">#}
+{#        <div class="col-sm-6 index-tile">#}
+{#            <div class="index-essay">#}
+{#                <img class="img-responsive" src="{% static 'img/placeholders/600x250.png' %}">#}
+{#            </div>#}
+{#            <div class="index-essay">#}
+{#                <img class="img-responsive" src="{% static 'img/placeholders/600x250.png' %}">#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="col-sm-6 index-tile">#}
+{#            <div class="index-product">#}
+{#                <img class="img-responsive" src="{% static 'img/placeholders/600x250.png' %}">#}
+{#            </div>#}
+{#            <div class="index-product">#}
+{#                <img class="img-responsive" src="{% static 'img/600x250.gif' %}">#}
+{#                <img class="img-responsive" src="{% static 'img/placeholders/600x250.png' %}">#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    {% blocktrans %}#}
+{##}
+{#    {% endblocktrans %}#}
+{#    <a href="{% url 'about1' %}">{% trans "About" %}</a><br>#}
+{#    <a href="{% url 'test:test' %}">{% trans "Test page" %}</a>#}
+{#</div>#}
+{% endblock %}
+
+{% block right_side %}
+{% endblock %}

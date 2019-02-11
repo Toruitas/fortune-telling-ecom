@@ -1,0 +1,50 @@
+<a href="{{ product.get_absolute_url }}" class="thumbnail-product">
+        {% if product.image %}
+        <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail product.image 400 600 %}">
+        {% else %}
+        <div class="placeholder"></div>
+        {% endif %}
+        <div class="caption">
+            <h4 class="product-thumbnail-title">{{ product }}</h4>
+        <div class="price-info">
+        {% if product.has_price %}
+            {% if product.on_sale or request.user.membership.is_member %}
+                <span class="old-price">{{ product.unit_price|currency }}</span>
+            {% endif %}
+{#            {% if request.user.membership.level == "regular" or request.user.is_anonymous %}#}
+{#                <!-- on sale but not member-->#}
+{#                {% if product.on_sale %}#}
+{#                    <span class="price">{{ product.price|currency }}</span>#}
+{#                    <span class="old-price">{{ product.unit_price|currency }}</span>#}
+{#                    {% trans 'ON SALE!' %}#}
+{#                {% else %}#}
+{#                    <span class="price">{{ product.unit_price|currency }}</span>#}
+{#                {% endif %}#}
+{#                <!-- member -->#}
+{#            {% else %}#}
+{#                {% if product.on_sale %}#}
+{#                    {% trans "On sale: " %}#}
+{#                    <span class="price">#}
+    {#                    {% trans "Member Price: " %}#}
+{#                        {{ product.price|sub:discount|currency }}#}
+{#                    </span>#}
+{#                    <span class="old-price">{{ product.unit_price|currency }}</span>#}
+{#                    <span>{% trans 'SALE + DISCOUNT' %}</span>#}
+{#                {% else %}#}
+{#                    <span class="price">#}
+    {#                    {% trans "Member Price: " %}#}
+{#                        {{ product.price|sub:discount|currency }}#}
+{#                    </span>#}
+{#                    <span class="old-price">{{ product.unit_price|currency }}</span>#}
+{#                {% endif %}#}
+            {% if variation.on_sale %}
+                <span class="old-price">{{ product.unit_price|sub:discount|currency }}</span>
+                {% trans "On sale" %}:
+            {% endif %}
+            <span class="price">{{ product.price|sub:discount|currency }}</span>
+        {% else %}
+            <span class="coming-soon">{% trans "Coming soon" %}</span>
+        {% endif %}
+        </div>
+        </div>
+    </a>

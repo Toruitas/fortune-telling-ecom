@@ -1,0 +1,13 @@
+{% extends "email/base.html" %}
+{% load i18n %}
+
+{% block main %}
+<p>{% trans "Thanks for signing up for our Feng Shui Class!" %}</p>
+<br>
+    {% for class in classes %}
+<p>{% trans "Class Name" %}: {{ class.title|safe }}</p>
+<p>{% trans "Class Details" %}: {{ class.content|safe }}</p>
+    {% endfor %}
+<br>
+    <p><a href="mailto:{{ SHOP_ORDER_FROM_EMAIL }}">{% trans "Please email us for any changes or cancelations." %}</a></p>
+{% endblock %}

@@ -1,0 +1,2544 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-02 02:25+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: about/forms.py:10 templates/email/account_approve.html:6
+#: templates/email/account_approve.txt:6
+msgid "Email"
+msgstr ""
+
+#: about/forms.py:11 templates/admin/forum/forum/change_list_table.html:9
+#: templates/email/account_approve.html:5
+#: templates/email/account_approve.txt:5
+#: templates/email/details_confirm.html:9
+#: templates/shop/email/details_confirm.html:9
+msgid "Name"
+msgstr ""
+
+#: about/forms.py:12
+msgid "Subject"
+msgstr ""
+
+#: about/forms.py:13
+msgid "Message"
+msgstr ""
+
+#: about/templates/about/thanks.html:15
+msgid ""
+"\n"
+"        Thanks very much for your email. While you wait for a response, how "
+"about you check out one of Master Kiki's writings?\n"
+"    "
+msgstr ""
+
+#: about/templates/about/thanks.html:19
+msgid "Articles"
+msgstr ""
+
+#: about/templates/pages/aboutpg-alt.html:35
+msgid "Contact"
+msgstr ""
+
+#: about/templates/pages/aboutpg-alt.html:40
+#: about/templates/pages/aboutpg.html:81
+#: fortune/templates/fortune/fortune_form.html:26
+#: templates/machina/forum_conversation/forum_polls/poll_vote_form.html:35
+#: templates/machina/forum_conversation/partials/topic_form.html:103
+#: templates/machina/forum_conversation/post_create.html:27
+#: templates/machina/forum_conversation/post_update.html:27
+#: templates/machina/forum_member/forum_profile_update.html:36
+#: templates/pages/form.html:27
+msgid "Submit"
+msgstr ""
+
+#: about/templates/pages/aboutpg.html:76
+msgid "Contact Us"
+msgstr ""
+
+#: about/templates/pages/privacy.html:17 templates/base.html:264
+msgid "Privacy Policy"
+msgstr ""
+
+#: about/templates/pages/terms.html:17 templates/base.html:270
+msgid "Terms and Conditions"
+msgstr ""
+
+#: about/templates/test_mez/test_view.html:4
+#: about/templates/test_mez/test_view.html:5
+#: about/templates/test_mez/test_view.html:8
+#: patches/templates/test_mez/test_view.html:4
+#: patches/templates/test_mez/test_view.html:5
+#: patches/templates/test_mez/test_view.html:8
+#: templates/admin/forum/forum/editpermissions_form.html:16
+#: templates/admin/forum/forum/editpermissions_index.html:11
+#: templates/index.html:4 templates/pages/menus/breadcrumb.html:4
+#: templates/pages/menus/breadcrumb.html:10
+#: templates/pages/menus/dropdown.html:10
+#: templates/pages/menus/footer_tree.html:11
+#: templates/pages/menus/mobile.html:10 templates/pages/menus/primary.html:8
+#: templates/search_results.html:13
+msgid "Home"
+msgstr ""
+
+#: about/views.py:14 about/views.py:15
+msgid "Thanks for the email"
+msgstr ""
+
+#: fortune/forms.py:30
+msgid "Male"
+msgstr ""
+
+#: fortune/forms.py:31
+msgid "Female"
+msgstr ""
+
+#: fortune/forms.py:33
+msgid "Gender"
+msgstr ""
+
+#: fortune/forms.py:37
+msgid "Birthday"
+msgstr ""
+
+#: fortune/forms.py:39
+msgid "Birth Time"
+msgstr ""
+
+#: fortune/templates/fortune/fortune_display.html:12
+msgid "Your Fortune"
+msgstr ""
+
+#: fortune/templates/fortune/prayers.html:13
+msgid ""
+"\n"
+"    Need instructions on this\n"
+msgstr ""
+
+#: fortune/templates/fortune/prayers.html:25
+msgid ""
+"\n"
+"            You must become a member for Kiki to help turn your fortune "
+"around.\n"
+"        "
+msgstr ""
+
+#: fortune/templates/fortune/prayers.html:36
+#: templates/blog/blog_post_detail.html:203
+msgid "Get Premium"
+msgstr ""
+
+#: fortune/views.py:77 fortune/views.py:78 fortune/views.py:79
+#: fortune/views.py:80 fortune/views.py:81 fortune/views.py:84
+#: fortune/views.py:86 fortune/views.py:88 fortune/views.py:90
+#: fortune/views.py:92 fortune/views.py:94
+msgid "Yang"
+msgstr ""
+
+#: fortune/views.py:77 fortune/views.py:86 fortune/views.py:87
+msgid "Wood"
+msgstr ""
+
+#: fortune/views.py:77 fortune/views.py:78 fortune/views.py:79
+#: fortune/views.py:80 fortune/views.py:81
+msgid "Yin"
+msgstr ""
+
+#: fortune/views.py:78 fortune/views.py:89 fortune/views.py:90
+msgid "Fire"
+msgstr ""
+
+#: fortune/views.py:79 fortune/views.py:85 fortune/views.py:88
+#: fortune/views.py:91 fortune/views.py:94
+msgid "Earth"
+msgstr ""
+
+#: fortune/views.py:80 fortune/views.py:92 fortune/views.py:93
+msgid "Metal"
+msgstr ""
+
+#: fortune/views.py:81 fortune/views.py:84 fortune/views.py:95
+msgid "Water"
+msgstr ""
+
+#: fortune/views.py:84
+msgid "Rat"
+msgstr ""
+
+#: fortune/views.py:85 fortune/views.py:87 fortune/views.py:89
+#: fortune/views.py:91 fortune/views.py:93 fortune/views.py:95
+msgid "Ying"
+msgstr ""
+
+#: fortune/views.py:85
+msgid "Ox"
+msgstr ""
+
+#: fortune/views.py:86
+msgid "Tiger"
+msgstr ""
+
+#: fortune/views.py:87
+msgid "Rabbit"
+msgstr ""
+
+#: fortune/views.py:88
+msgid "Dragon"
+msgstr ""
+
+#: fortune/views.py:89
+msgid "Snake"
+msgstr ""
+
+#: fortune/views.py:90
+msgid "Horse"
+msgstr ""
+
+#: fortune/views.py:91
+msgid "Goat"
+msgstr ""
+
+#: fortune/views.py:92
+msgid "Monkey"
+msgstr ""
+
+#: fortune/views.py:93
+msgid "Rooster"
+msgstr ""
+
+#: fortune/views.py:94
+msgid "Dog"
+msgstr ""
+
+#: fortune/views.py:95
+msgid "Pig"
+msgstr ""
+
+#: fortune/views.py:97
+msgid "Year"
+msgstr ""
+
+#: fortune/views.py:97
+msgid "Month"
+msgstr ""
+
+#: fortune/views.py:97
+msgid "Day"
+msgstr ""
+
+#: fortune/views.py:97
+msgid "Hour"
+msgstr ""
+
+#: fortune/views.py:97
+msgid "Minute"
+msgstr ""
+
+#: fortune/views.py:104 fortune/views.py:105
+msgid "Your 8 Characters"
+msgstr ""
+
+#: fortune/views.py:108
+msgid "Ba Zi Fortune"
+msgstr ""
+
+#: fortune/views.py:108
+msgid "Get your Ba Zi"
+msgstr ""
+
+#: fortune/views.py:129
+msgid "Eight Characters Fortune"
+msgstr ""
+
+#: fortune/views.py:143 fortune/views.py:144 payments/utils.py:345
+msgid "Prayers"
+msgstr ""
+
+#: patches/admin.py:97
+msgid "Send user email with delivery information"
+msgstr ""
+
+#: patches/forms.py:59
+msgid "The discount code entered is invalid."
+msgstr ""
+
+#: patches/forms.py:79
+msgid "Free shipping"
+msgstr ""
+
+#: patches/forms.py:134
+msgid "My delivery details are the same as my billing details"
+msgstr ""
+
+#: patches/forms.py:136
+msgid "Remember my address for next time"
+msgstr ""
+
+#: patches/forms.py:152 patches/forms.py:153 profiles/models.py:32
+msgid "Zip/Postcode"
+msgstr ""
+
+#: patches/forms.py:269 templates/shop/product.html:129
+msgid "The selected options are currently unavailable."
+msgstr ""
+
+#: patches/forms.py:270
+msgid "The selected options are currently not in stock."
+msgstr ""
+
+#: patches/forms.py:271
+msgid "The selected quantity is currently unavailable."
+msgstr ""
+
+#: patches/forms.py:282
+msgid "Quantity"
+msgstr ""
+
+#: patches/models.py:88 patches/models.py:89
+msgid "Postcode"
+msgstr ""
+
+#: patches/stripe_api.py:46 patches/stripe_api.py:65 payments/stripe_api.py:46
+msgid "Transaction declined"
+msgstr ""
+
+#: patches/stripe_api.py:48 patches/stripe_api.py:67 payments/stripe_api.py:48
+msgid "A general error occured: "
+msgstr ""
+
+#: patches/templates/pages/shop_unused.html:149
+msgid "items"
+msgstr ""
+
+#: patches/templates/pages/shop_unused.html:153
+#: templates/pages/category_o.html:48
+msgid "Sort by"
+msgstr ""
+
+#: patches/templates/pages/shop_unused.html:185
+msgid "Become a member to enjoy a discount"
+msgstr ""
+
+#: patches/templates/pages/shop_unused.html:187
+msgid "Prices including your membership discount!"
+msgstr ""
+
+#: patches/templates/pages/shop_unused.html:191
+#: templates/pages/category_o.html:135 templates/shop/cart.html:120
+#: templates/shop/product.html:187
+msgid "On sale:"
+msgstr ""
+
+#: patches/templates/pages/shop_unused.html:195
+#: patches/templates/shop/includes/class_thumb.html:46
+#: patches/templates/shop/includes/prayer_thumb.html:46
+#: templates/pages/category_o.html:139 templates/shop/cart.html:124
+#: templates/shop/product.html:191
+msgid "Coming soon"
+msgstr ""
+
+#: patches/templates/shop/includes/class_thumb.html:42
+#: patches/templates/shop/includes/prayer_thumb.html:42
+msgid "On sale"
+msgstr ""
+
+#: patches/templates/shop/track_order.html:4
+#: patches/templates/shop/track_order.html:5
+msgid "Track your order"
+msgstr ""
+
+#: patches/templates/shop/track_order.html:18
+msgid "Track My Order"
+msgstr ""
+
+#: patches/templates/shop/track_order.html:19
+msgid "Copy and paste the following tracking number: "
+msgstr ""
+
+#: patches/templates/shop/track_order.html:21
+msgid "And visit the following shipping website to track your order: "
+msgstr ""
+
+#: patches/templates/shop/track_order.html:24
+msgid "View orders"
+msgstr ""
+
+#: patches/utils.py:162
+#, python-format
+msgid ""
+"Invalid currency locale specified for SHOP_CURRENCY_LOCALE: '%s'. You'll "
+"need to set the locale for your system, or configure the "
+"SHOP_CURRENCY_LOCALE setting in your settings module."
+msgstr ""
+
+#: patches/views.py:83
+msgid "Item added to cart"
+msgstr ""
+
+#: patches/views.py:90
+msgid "Item added to wishlist"
+msgstr ""
+
+#: patches/views.py:146
+msgid "Your cart has expired"
+msgstr ""
+
+#: patches/views.py:154
+msgid "Cart updated"
+msgstr ""
+
+#: payments/templates/payments/order_not_found_or_paid.html:4
+#: payments/templates/payments/order_not_found_or_paid.html:5
+#: payments/templates/payments/order_not_found_or_paid.html:6
+#: payments/templates/payments/pay.html:4
+#: payments/templates/payments/pay.html:5
+#: payments/templates/payments/pay.html:6
+#: payments/templates/payments/payment_received.html:4
+#: payments/templates/payments/payment_received.html:5
+#: payments/templates/payments/payment_received.html:6
+msgid "Pay"
+msgstr ""
+
+#: payments/templates/payments/pay.html:18
+msgid "Choose Payment Method"
+msgstr ""
+
+#: payments/templates/payments/pay.html:26
+msgid "AliPay"
+msgstr ""
+
+#: payments/templates/payments/pay.html:32
+msgid "Credit Card"
+msgstr ""
+
+#: payments/templates/payments/pay.html:38
+msgid "WeChat Pay"
+msgstr ""
+
+#: payments/templates/payments/pay.html:49
+msgid "Credit or debit card"
+msgstr ""
+
+#: payments/templates/payments/pay.html:61
+msgid "Submit Payment"
+msgstr ""
+
+#: payments/templates/payments/payment_received.html:23
+msgid "Please try again"
+msgstr ""
+
+#: payments/templates/payments/payment_received.html:32
+msgid "Return to home"
+msgstr ""
+
+#: payments/utils.py:341 templates/pages/category.html:267
+#: templates/pages/classes.html:197
+msgid "Classes"
+msgstr ""
+
+#: payments/utils.py:343
+msgid "Fortunes"
+msgstr ""
+
+#: payments/utils.py:347
+msgid "Numerologies"
+msgstr ""
+
+#: payments/views.py:80
+msgid "This order cannot be found - please contact customer service."
+msgstr ""
+
+#: payments/views.py:88
+msgid "This order has already been paid for. Thanks!"
+msgstr ""
+
+#: payments/views.py:152 payments/views.py:183
+msgid "Your payment has been processed, and order is on the way soon."
+msgstr ""
+
+#: payments/views.py:186
+msgid "There was an error with your AliPay payment"
+msgstr ""
+
+#: profiles/forms.py:32 profiles/forms.py:436
+msgid "Enter your birthday"
+msgstr ""
+
+#: profiles/forms.py:33
+msgid "What direction does your primary location face?"
+msgstr ""
+
+#: profiles/forms.py:34 profiles/forms.py:44 profiles/forms.py:54
+#: profiles/models.py:34 profiles/models.py:35 profiles/models.py:45
+#: profiles/models.py:46 profiles/models.py:56 profiles/models.py:57
+msgid "North"
+msgstr ""
+
+#: profiles/forms.py:35 profiles/forms.py:45 profiles/forms.py:55
+#: profiles/models.py:36 profiles/models.py:47 profiles/models.py:58
+msgid "Northwest"
+msgstr ""
+
+#: profiles/forms.py:36 profiles/forms.py:46 profiles/forms.py:56
+#: profiles/models.py:37 profiles/models.py:48 profiles/models.py:59
+msgid "West"
+msgstr ""
+
+#: profiles/forms.py:37 profiles/forms.py:47 profiles/forms.py:57
+#: profiles/models.py:38 profiles/models.py:49 profiles/models.py:60
+msgid "Southwest"
+msgstr ""
+
+#: profiles/forms.py:38 profiles/forms.py:48 profiles/forms.py:58
+#: profiles/models.py:39 profiles/models.py:50 profiles/models.py:61
+msgid "South"
+msgstr ""
+
+#: profiles/forms.py:39 profiles/forms.py:49 profiles/forms.py:59
+#: profiles/models.py:40 profiles/models.py:51 profiles/models.py:62
+msgid "Southeast"
+msgstr ""
+
+#: profiles/forms.py:40 profiles/forms.py:50 profiles/forms.py:60
+#: profiles/models.py:41 profiles/models.py:52 profiles/models.py:63
+msgid "East"
+msgstr ""
+
+#: profiles/forms.py:41 profiles/forms.py:51 profiles/forms.py:61
+#: profiles/models.py:42 profiles/models.py:53 profiles/models.py:64
+msgid "Northeast"
+msgstr ""
+
+#: profiles/forms.py:43
+msgid "What direction does your secondary location face?"
+msgstr ""
+
+#: profiles/forms.py:53
+msgid "What direction does your third location face?"
+msgstr ""
+
+#: profiles/forms.py:73
+msgid "Email address"
+msgstr ""
+
+#: profiles/forms.py:75
+msgid "Username or email address"
+msgstr ""
+
+#: profiles/forms.py:84
+msgid "Chinese Name"
+msgstr ""
+
+#: profiles/forms.py:85
+msgid "English Name"
+msgstr ""
+
+#: profiles/forms.py:86
+msgid "Password"
+msgstr ""
+
+#: profiles/forms.py:88
+msgid "Password (again)"
+msgstr ""
+
+#: profiles/forms.py:102
+msgid "Only letters, numbers, dashes or underscores please"
+msgstr ""
+
+#: profiles/forms.py:118
+msgid "Leave blank unless you want to change your password"
+msgstr ""
+
+#: profiles/forms.py:146
+msgid "Username can only contain letters, numbers, dashes or underscores."
+msgstr ""
+
+#: profiles/forms.py:154
+msgid "This username is already registered"
+msgstr ""
+
+#: profiles/forms.py:167
+msgid "Passwords do not match"
+msgstr ""
+
+#: profiles/forms.py:170
+#, python-format
+msgid "Password must be at least %s characters"
+msgstr ""
+
+#: profiles/forms.py:185
+msgid "This email is already registered"
+msgstr ""
+
+#: profiles/forms.py:446
+msgid "New Email"
+msgstr ""
+
+#: profiles/forms.py:447
+msgid "Confirm New Email"
+msgstr ""
+
+#: profiles/models.py:27
+msgid "Phone number"
+msgstr ""
+
+#: profiles/models.py:28
+msgid "Mobile phone number"
+msgstr ""
+
+#: profiles/models.py:29
+msgid "Street"
+msgstr ""
+
+#: profiles/models.py:30
+msgid "City"
+msgstr ""
+
+#: profiles/models.py:31
+msgid "State/Region"
+msgstr ""
+
+#: profiles/models.py:33
+msgid "Country"
+msgstr ""
+
+#: profiles/models.py:34
+msgid "Direction of Primary Location"
+msgstr ""
+
+#: profiles/models.py:45
+msgid "Direction of Secondary Location"
+msgstr ""
+
+#: profiles/models.py:56
+msgid "Direction of Third Location"
+msgstr ""
+
+#: profiles/models.py:70 profiles/templates/profiles/change_membership.html:31
+#: seb/settings.py:1033 seb/settings.py:1035 seb/settings.py:1087
+msgid "Regular"
+msgstr ""
+
+#: profiles/models.py:71 profiles/templates/profiles/change_membership.html:50
+#: seb/settings.py:1087
+msgid "Gold"
+msgstr ""
+
+#: profiles/models.py:72 profiles/templates/profiles/change_membership.html:71
+msgid "Diamond"
+msgstr ""
+
+#: profiles/templates/admin/profile_inline.html:10
+#: templates/admin/profile_inline.html:10
+msgid "Profile information"
+msgstr ""
+
+#: profiles/templates/profiles/change_membership.html:4
+#: profiles/templates/profiles/change_membership.html:5
+#: profiles/templates/profiles/change_membership.html:6
+#: profiles/templates/profiles/change_membership_disabled.html:4
+#: profiles/templates/profiles/change_membership_disabled.html:5
+#: profiles/templates/profiles/change_membership_disabled.html:6
+msgid "Upgrade Membership"
+msgstr ""
+
+#: profiles/templates/profiles/change_membership.html:33
+msgid "Free"
+msgstr ""
+
+#: profiles/templates/profiles/change_membership.html:43
+msgid "Get Regular"
+msgstr ""
+
+#: profiles/templates/profiles/change_membership.html:51
+#: profiles/templates/profiles/change_membership.html:72
+msgid "year"
+msgstr ""
+
+#: profiles/templates/profiles/change_membership.html:63
+msgid "Get Gold"
+msgstr ""
+
+#: profiles/templates/profiles/change_membership.html:85
+msgid "Get Diamond"
+msgstr ""
+
+#: profiles/templates/profiles/membership_confirm.html:4
+#: profiles/templates/profiles/membership_confirm.html:5
+msgid "Confirm"
+msgstr ""
+
+#: profiles/templates/profiles/membership_confirm.html:19
+#, python-format
+msgid "%(title)s"
+msgstr ""
+
+#: profiles/templates/profiles/profile.html:29
+msgid "member"
+msgstr ""
+
+#: profiles/templates/profiles/profile.html:49
+msgid "Upgrade membership"
+msgstr ""
+
+#: profiles/templates/profiles/profile.html:54 profiles/views.py:93
+msgid "Update Email"
+msgstr ""
+
+#: profiles/templates/profiles/profile.html:57
+msgid "Update Password"
+msgstr ""
+
+#: profiles/templates/profiles/profile.html:63
+msgid "Update Birthday"
+msgstr ""
+
+#: profiles/templates/profiles/profile.html:66
+msgid "Update Orientation"
+msgstr ""
+
+#: profiles/templates/profiles/profile.html:69
+msgid "View all orders"
+msgstr ""
+
+#: profiles/utils.py:41
+msgid "Your membership is about to expire"
+msgstr ""
+
+#: profiles/utils.py:57
+msgid "Your membership has expired - renew asap to regain benefits!"
+msgstr ""
+
+#: profiles/views.py:61
+msgid ""
+"Thanks for signing up! You'll receive an email when your account is "
+"activated."
+msgstr ""
+
+#: profiles/views.py:65
+msgid ""
+"A verification email has been sent with a link for activating your account."
+msgstr ""
+
+#: profiles/views.py:69
+msgid "Successfully signed up"
+msgstr ""
+
+#: profiles/views.py:72 templates/accounts/includes/user_panel.html:23
+#: templates/accounts/includes/user_panel_nav.html:16
+#: templates/pages/menus/dropdown.html:58
+msgid "Sign up"
+msgstr ""
+
+#: profiles/views.py:90
+msgid "Your email address has been updated"
+msgstr ""
+
+#: profiles/views.py:106
+msgid "Your address has been updated"
+msgstr ""
+
+#: profiles/views.py:108
+msgid "Update address"
+msgstr ""
+
+#: profiles/views.py:121
+msgid "Your orientations have been updated"
+msgstr ""
+
+#: profiles/views.py:123
+msgid "Update orientation"
+msgstr ""
+
+#: profiles/views.py:136
+msgid "Your birthday has been updated"
+msgstr ""
+
+#: profiles/views.py:138
+msgid "Update birthday"
+msgstr ""
+
+#: profiles/views.py:237
+#: templates/admin/forum/forum/editpermissions_index.html:51
+#: templates/admin/forum/forum/editpermissions_index.html:78
+msgid "Select"
+msgstr ""
+
+#: profiles/views.py:290
+msgid "Your membership will activate after purchase"
+msgstr ""
+
+#: profiles/views.py:294
+msgid "Confirm membership"
+msgstr ""
+
+#: seb/settings.py:192
+msgid "English"
+msgstr ""
+
+#: seb/settings.py:193
+msgid "Simplified Chinese"
+msgstr ""
+
+#: seb/settings.py:194
+msgid "Traditional Chinese"
+msgstr ""
+
+#: seb/settings.py:701 seb/settings.py:703 seb/settings.py:712
+msgid "Full shop available"
+msgstr ""
+
+#: seb/settings.py:704 seb/settings.py:713
+msgid "Full access to all essays"
+msgstr ""
+
+#: seb/settings.py:705 seb/settings.py:714
+msgid "Receive Feng Shui advice from Master Kiki twice each year"
+msgstr ""
+
+#: seb/settings.py:706 seb/settings.py:715
+msgid "Free Feng Shui calendar (HK$200 value)"
+msgstr ""
+
+#: seb/settings.py:707
+msgid "Gold member prices on all products and classes"
+msgstr ""
+
+#: seb/settings.py:708
+msgid "High priority for Feng Shui consultations"
+msgstr ""
+
+#: seb/settings.py:709 seb/settings.py:718
+msgid "Full access to the Feng Shui forums"
+msgstr ""
+
+#: seb/settings.py:716
+msgid "Diamond member prices on all products and classes"
+msgstr ""
+
+#: seb/settings.py:717
+msgid "Highest priority for Feng Shui consultations"
+msgstr ""
+
+#: seb/settings.py:719
+msgid "8 Character Fortune reading"
+msgstr ""
+
+#: seb/settings.py:720
+msgid "Online Fung Shui consultation for your residence"
+msgstr ""
+
+#: seb/settings.py:721
+msgid "Receive 10 additional words of wisdom from Master Kiki"
+msgstr ""
+
+#: seb/settings.py:894
+msgid "Show on Home"
+msgstr ""
+
+#: seb/settings.py:901
+msgid "Show on Blog List"
+msgstr ""
+
+#: seb/settings.py:913
+msgid "Price HKD"
+msgstr ""
+
+#: seb/settings.py:921
+msgid "Gold Member Price HKD"
+msgstr ""
+
+#: seb/settings.py:929
+msgid "Gold Member Price RMB"
+msgstr ""
+
+#: seb/settings.py:937
+msgid "Diamond Member Price HKD"
+msgstr ""
+
+#: seb/settings.py:945
+msgid "Diamond Member Price RMB"
+msgstr ""
+
+#: seb/settings.py:954
+msgid "Shipping ID"
+msgstr ""
+
+#: seb/settings.py:963
+msgid "Shipping URL"
+msgstr ""
+
+#: seb/settings.py:972
+msgid "Payment Type"
+msgstr ""
+
+#: seb/settings.py:981
+msgid "Stripe Source ID"
+msgstr ""
+
+#: seb/settings.py:989
+msgid "Stripe Source Object"
+msgstr ""
+
+#: seb/settings.py:997
+msgid "Order paid"
+msgstr ""
+
+#: seb/settings.py:1004
+msgid "Order paid time"
+msgstr ""
+
+#: seb/settings.py:1011
+msgid "Display on home products"
+msgstr ""
+
+#: seb/settings.py:1018
+msgid "Display on home slider"
+msgstr ""
+
+#: seb/settings.py:1025
+msgid "Display product on shop page slider"
+msgstr ""
+
+#: seb/settings.py:1032
+msgid "Product Type"
+msgstr ""
+
+#: seb/settings.py:1036
+msgid "Class"
+msgstr ""
+
+#: seb/settings.py:1036
+msgid "Fortune"
+msgstr ""
+
+#: seb/settings.py:1036
+msgid "Prayer"
+msgstr ""
+
+#: seb/settings.py:1037
+msgid "Numerology"
+msgstr ""
+
+#: seb/settings.py:1037
+msgid "Membership"
+msgstr ""
+
+#: seb/settings.py:1042
+msgid "Is Membership"
+msgstr ""
+
+#: seb/settings.py:1049
+msgid "Is Class"
+msgstr ""
+
+#: seb/settings.py:1056
+msgid "Is Fortune"
+msgstr ""
+
+#: seb/settings.py:1063
+msgid "Number Sold"
+msgstr ""
+
+#: seb/settings.py:1072
+msgid "Featured Image"
+msgstr ""
+
+#: seb/settings.py:1083
+msgid "Membership Level"
+msgstr ""
+
+#: seb/settings.py:1087
+msgid "diamond"
+msgstr ""
+
+#: templates/accounts/account_login.html:7
+msgid ""
+"You're already logged in. If you'd like to log in as a different user, "
+"you'll need to log out first."
+msgstr ""
+
+#: templates/accounts/account_login.html:11
+#, python-format
+msgid ""
+"If you don't have an account you can <a href=\"%(signup_url)s?next=%(next)s"
+"\">sign up</a> for one now."
+msgstr ""
+
+#: templates/accounts/account_login.html:14
+#, python-format
+msgid ""
+"<p>You can also <a href=\"%(password_reset_url)s?next=%(profile_update_url)s"
+"\">reset your password</a> if you've forgotten it.</p>"
+msgstr ""
+
+#: templates/accounts/account_password_reset.html:6
+msgid ""
+"Enter your username or email address and you'll receive an email with a link "
+"you need to click, in order to log in and change your password."
+msgstr ""
+
+#: templates/accounts/account_profile.html:18
+#: templates/accounts/includes/user_panel.html:11
+msgid "Update profile"
+msgstr ""
+
+#: templates/accounts/account_profile_update.html:6
+msgid "View past orders"
+msgstr ""
+
+#: templates/accounts/account_signup.html:7
+msgid ""
+"You're already logged in. If you'd like to create a new account, you'll need "
+"to log out first."
+msgstr ""
+
+#: templates/accounts/account_signup.html:11
+msgid ""
+"After signing up, your account will be reviewed for approval. You'll receive "
+"an email when your account is activated."
+msgstr ""
+
+#: templates/accounts/account_signup.html:13
+msgid ""
+"After signing up, you'll receive an email with a link you need to click, in "
+"order to activate your account."
+msgstr ""
+
+#: templates/accounts/includes/user_panel.html:5
+msgid "Logged in as: "
+msgstr ""
+
+#: templates/accounts/includes/user_panel.html:17
+#: templates/accounts/includes/user_panel_nav.html:11
+#: templates/includes/editable_toolbar.html:9
+#: templates/pages/menus/dropdown.html:48
+msgid "Log out"
+msgstr ""
+
+#: templates/accounts/includes/user_panel.html:20
+#: templates/accounts/includes/user_panel_nav.html:14
+#: templates/pages/menus/dropdown.html:54
+msgid "Log in"
+msgstr ""
+
+#: templates/accounts/includes/user_panel.html:21
+msgid "or"
+msgstr ""
+
+#: templates/admin/forum/forum/change_form.html:5
+#: templates/admin/forum/forum/editpermissions_form.html:20
+#: templates/admin/forum/forum/editpermissions_index.html:15
+msgid "Forum permissions"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list.html:7
+msgid "List of forums"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list.html:15
+msgid "Global forum permissions"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list_table.html:10
+msgid "Quick actions"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list_table.html:11
+msgid "Type"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list_table.html:12
+#: templates/email/details_confirm.html:10
+#: templates/shop/email/details_confirm.html:10
+msgid "Details"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list_table.html:28
+msgid "Move up"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list_table.html:33
+msgid "Move down"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list_table.html:37
+msgid "Add a sub-forum"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list_table.html:38
+#: templates/machina/forum_conversation/topic_detail.html:37
+msgid "Delete"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list_table.html:47
+msgid "Topics:"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list_table.html:47
+#: templates/machina/forum_conversation/topic_detail.html:97
+#: templates/machina/forum_member/user_posts_list.html:69
+#: templates/machina/forum_moderation/moderation_queue/detail.html:116
+msgid "Posts:"
+msgstr ""
+
+#: templates/admin/forum/forum/change_list_table.html:49
+msgid "Link:"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_anonymous_user.html:4
+#: templates/admin/forum/forum/editpermissions_index.html:30
+#: templates/admin/forum/forum/editpermissions_user.html:4
+msgid "Edit user permissions"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_form.html:34
+msgid "Permission"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_form.html:35
+msgid "Not set"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_form.html:36
+msgid "Granted"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_form.html:37
+msgid "Not granted"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_form.html:63
+#: templates/includes/editable_form.html:16
+msgid "Save"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_group.html:4
+#: templates/admin/forum/forum/editpermissions_index.html:57
+msgid "Edit group permissions"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_index.html:25
+msgid "Please correct the error below."
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_index.html:25
+#: templates/includes/form_errors.html:8
+msgid "Please correct the errors below."
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_index.html:31
+msgid "Please select a user in order to update its permissions"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_index.html:58
+msgid "Please select a group in order to update its permissions"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_index.html:85
+msgid "Copy permissions from another forum"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_index.html:86
+msgid ""
+"Please select a forum in order to copy its permissions configuration to the "
+"current forum"
+msgstr ""
+
+#: templates/admin/forum/forum/editpermissions_index.html:106
+msgid "Copy"
+msgstr ""
+
+#: templates/base.html:89
+msgid "Toggle Navigation"
+msgstr ""
+
+#: templates/base.html:263
+msgid "About Us"
+msgstr ""
+
+#: templates/blog/blog_post_detail.html:160
+#: templates/blog/blog_post_list.html:141
+#: templates/blog/blog_post_list_orig.html:111
+#: templates/blog/blog_post_list_page.html:47
+#: templates/machina/forum_feeds/topics_description.html:5
+msgid "Posted by"
+msgstr ""
+
+#: templates/blog/blog_post_detail.html:166
+#: templates/blog/blog_post_list.html:147
+#: templates/blog/blog_post_list_orig.html:117
+#: templates/blog/blog_post_list_page.html:53
+msgid "in"
+msgstr ""
+
+#: templates/blog/blog_post_detail.html:195
+msgid "Become a premium member to finish reading..."
+msgstr ""
+
+#: templates/blog/blog_post_list.html:4
+#: templates/blog/blog_post_list_orig.html:4
+msgid "Blog"
+msgstr ""
+
+#: templates/blog/blog_post_list.html:29
+#: templates/blog/blog_post_list_orig.html:31 templates/pages/category.html:19
+#: templates/pages/classes.html:19
+msgid "Tag:"
+msgstr ""
+
+#: templates/blog/blog_post_list.html:31
+#: templates/blog/blog_post_list_orig.html:33 templates/pages/category.html:21
+#: templates/pages/classes.html:21
+msgid "Category:"
+msgstr ""
+
+#: templates/blog/blog_post_list.html:35
+#: templates/blog/blog_post_list_orig.html:37 templates/pages/category.html:25
+#: templates/pages/classes.html:25
+msgid "Author:"
+msgstr ""
+
+#: templates/blog/blog_post_list.html:214 templates/pages/category.html:390
+#: templates/pages/classes.html:256
+msgid "End of the line"
+msgstr ""
+
+#: templates/blog/blog_post_list_orig.html:123
+#, python-format
+msgid "%(sometime)s"
+msgstr ""
+
+#: templates/blog/blog_post_list_orig.html:153
+#: templates/blog/includes/filter_panel.html:56
+msgid "Tags"
+msgstr ""
+
+#: templates/blog/blog_post_list_orig.html:163
+#: templates/search_results.html:47
+msgid "read more"
+msgstr ""
+
+#: templates/blog/includes/filter_panel.html:6
+msgid "Recent Posts"
+msgstr ""
+
+#: templates/blog/includes/filter_panel.html:27
+msgid "Archive"
+msgstr ""
+
+#: templates/blog/includes/filter_panel.html:43
+msgid "Categories"
+msgstr ""
+
+#: templates/blog/includes/filter_panel.html:72
+msgid "Authors"
+msgstr ""
+
+#: templates/blog/includes/filter_panel.html:84
+msgid "Feeds"
+msgstr ""
+
+#: templates/blog/includes/filter_panel.html:86
+#: templates/blog/includes/filter_panel.html:90
+#: templates/blog/includes/filter_panel.html:94
+#: templates/blog/includes/filter_panel.html:98
+msgid "RSS"
+msgstr ""
+
+#: templates/blog/includes/filter_panel.html:87
+#: templates/blog/includes/filter_panel.html:91
+#: templates/blog/includes/filter_panel.html:95
+#: templates/blog/includes/filter_panel.html:99
+msgid "Atom"
+msgstr ""
+
+#: templates/email/account_approve.html:3
+#: templates/email/account_approve.txt:3
+msgid "Hey there, a new account has been created and requires activation."
+msgstr ""
+
+#: templates/email/account_approve.html:11
+#: templates/email/account_approve.txt:9 templates/email/signup_verify.html:4
+#: templates/email/signup_verify.txt:4
+msgid "Please use the link below to activate it."
+msgstr ""
+
+#: templates/email/account_approve_subject.txt:2
+msgid "An account requires activation"
+msgstr ""
+
+#: templates/email/account_approved.html:3
+#: templates/email/account_approved.txt:3
+msgid "Hey there, your account has been activated."
+msgstr ""
+
+#: templates/email/account_approved.html:4
+#: templates/email/account_approved.txt:4
+msgid "Please use the link below to log in."
+msgstr ""
+
+#: templates/email/account_approved_subject.txt:2
+msgid "Your account has been activated"
+msgstr ""
+
+#: templates/email/class_confirm.html:5 templates/email/class_confirm.txt:5
+#: templates/shop/email/class_confirm.html:5
+#: templates/shop/email/class_confirm.txt:5
+msgid "Thanks for signing up for our Feng Shui Class!"
+msgstr ""
+
+#: templates/email/class_confirm.html:8 templates/email/class_confirm.txt:7
+#: templates/email/details_confirm.txt:8
+#: templates/shop/email/class_confirm.html:8
+#: templates/shop/email/class_confirm.txt:7
+#: templates/shop/email/details_confirm.txt:8
+msgid "Class Name"
+msgstr ""
+
+#: templates/email/class_confirm.html:9 templates/email/class_confirm.txt:8
+#: templates/email/details_confirm.txt:9
+#: templates/shop/email/class_confirm.html:9
+#: templates/shop/email/class_confirm.txt:8
+#: templates/shop/email/details_confirm.txt:9
+msgid "Class Details"
+msgstr ""
+
+#: templates/email/class_confirm.html:12
+#: templates/email/details_confirm.html:13
+#: templates/email/order_confirm.html:12 templates/email/order_confirm.txt:12
+#: templates/shop/email/class_confirm.html:12
+#: templates/shop/email/details_confirm.html:13
+#: templates/shop/email/order_confirm.html:12
+#: templates/shop/email/order_confirm.txt:12
+msgid "Please email us for any changes or cancelations."
+msgstr ""
+
+#: templates/email/class_confirm.txt:10
+#: templates/shop/email/class_confirm.txt:10
+msgid "Please email us for any changes or cancelations"
+msgstr ""
+
+#: templates/email/comment_notification.html:6
+msgid "A new comment has been posted on"
+msgstr ""
+
+#: templates/email/comment_notification.html:10
+#, python-format
+msgid ""
+"\n"
+"    At %(submit_date)s %(user_name)s wrote:\n"
+"    "
+msgstr ""
+
+#: templates/email/comment_notification.txt:7
+#, python-format
+msgid ""
+"\n"
+"At %(submit_date)s %(user_name)s wrote:\n"
+msgstr ""
+
+#: templates/email/details_confirm.html:5
+#: templates/email/details_confirm.txt:5 templates/email/order_confirm.html:10
+#: templates/email/order_confirm.txt:10
+#: templates/shop/email/details_confirm.html:5
+#: templates/shop/email/details_confirm.txt:5
+#: templates/shop/email/order_confirm.html:10
+#: templates/shop/email/order_confirm.txt:10
+msgid "Master Kiki thanks you wholeheartedly"
+msgstr ""
+
+#: templates/email/details_confirm.html:6
+#: templates/email/details_confirm.txt:6
+#: templates/shop/email/details_confirm.html:6
+#: templates/shop/email/details_confirm.txt:6
+msgid "Here are the details for your"
+msgstr ""
+
+#: templates/email/details_confirm.txt:11
+#: templates/shop/email/details_confirm.txt:11
+msgid "Please email us for any changes or errors"
+msgstr ""
+
+#: templates/email/membership_alert.html:6
+#: templates/email/membership_alert.txt:6
+msgid "Your membership will be expiring on "
+msgstr ""
+
+#: templates/email/membership_alert.html:9
+#: templates/email/membership_alert.txt:7
+#: templates/email/membership_expired.html:9
+#: templates/email/membership_expired.txt:6
+msgid "If you don't want to lose your benefits, follow this link to renew now."
+msgstr ""
+
+#: templates/email/membership_alert.html:11
+#: templates/email/membership_alert.txt:9
+msgid ""
+"But if you don't care, you don't have to do a thing and your membership will "
+"be automatically downgraded"
+msgstr ""
+
+#: templates/email/membership_expired.html:6
+#: templates/email/membership_expired.txt:5
+msgid "Your membership has expired!"
+msgstr ""
+
+#: templates/email/order_confirm.html:5 templates/email/order_confirm.txt:5
+#: templates/shop/email/order_confirm.html:5
+#: templates/shop/email/order_confirm.txt:5
+msgid "Your order has shipped!"
+msgstr ""
+
+#: templates/email/order_confirm.html:7 templates/email/order_confirm.txt:7
+#: templates/shop/email/order_confirm.html:7
+#: templates/shop/email/order_confirm.txt:7
+msgid "Find your shipment details here: "
+msgstr ""
+
+#: templates/email/order_confirm.html:8 templates/email/order_confirm.txt:8
+#: templates/shop/email/order_confirm.html:8
+#: templates/shop/email/order_confirm.txt:8
+msgid "Your tracking number: "
+msgstr ""
+
+#: templates/email/order_receipt.txt:5 templates/email/receipt.html:3
+#: templates/email/receipt_rtl.html:3
+msgid "Dear"
+msgstr ""
+
+#: templates/email/order_receipt.txt:7 templates/email/receipt.html:4
+#: templates/email/receipt_rtl.html:4
+msgid "Your order has been successful, details are below."
+msgstr ""
+
+#: templates/email/order_receipt.txt:9
+#: templates/shop/includes/order_details.html:7
+#: templates/shop/includes/order_details_rtl.html:8
+msgid "Order ID:"
+msgstr ""
+
+#: templates/email/order_receipt.txt:11
+msgid "Billing Details:"
+msgstr ""
+
+#: templates/email/order_receipt.txt:16
+msgid "Shipping Details:"
+msgstr ""
+
+#: templates/email/order_receipt.txt:21
+msgid "Items Ordered:"
+msgstr ""
+
+#: templates/email/order_receipt.txt:23
+msgid "each"
+msgstr ""
+
+#: templates/email/password_reset_verify.html:3
+#: templates/email/password_reset_verify.txt:3
+msgid "Hey there, the password reset form was used for your account."
+msgstr ""
+
+#: templates/email/password_reset_verify.html:4
+#: templates/email/password_reset_verify.txt:4
+msgid "Please use the link below to log in and update your password."
+msgstr ""
+
+#: templates/email/password_reset_verify.html:6
+#: templates/email/password_reset_verify.txt:6
+msgid ""
+"If you didn't request for your password to be reset, please ignore this "
+"email."
+msgstr ""
+
+#: templates/email/password_reset_verify_subject.txt:2
+msgid "Reset your password"
+msgstr ""
+
+#: templates/email/signup_verify.html:3 templates/email/signup_verify.txt:3
+msgid "Hey there, thanks for creating your account."
+msgstr ""
+
+#: templates/email/signup_verify_subject.txt:2
+msgid "Activate your account"
+msgstr ""
+
+#: templates/errors/404.html:6 templates/errors/404.html:10
+#: templates/errors/404.html:15
+msgid "Page not found"
+msgstr ""
+
+#: templates/errors/404.html:16
+msgid "The page you requested does not exist."
+msgstr ""
+
+#: templates/errors/500.html:6 templates/errors/500.html:10
+#: templates/errors/500.html:15
+msgid "Error"
+msgstr ""
+
+#: templates/errors/500.html:16
+msgid "Sorry, an error occurred."
+msgstr ""
+
+#: templates/generic/includes/comment.html:22
+#: templates/generic/includes/comment.html:59 templates/twitter/tweets.html:19
+#, python-format
+msgid "%(sometime)s ago"
+msgstr ""
+
+#: templates/generic/includes/comment.html:30
+msgid "Link"
+msgstr ""
+
+#: templates/generic/includes/comment.html:33
+#: templates/generic/includes/comment.html:49
+msgid "Reply"
+msgstr ""
+
+#: templates/generic/includes/comment.html:55
+msgid "Comment deleted"
+msgstr ""
+
+#: templates/generic/includes/comment.html:57
+msgid "Comment awaiting approval"
+msgstr ""
+
+#: templates/generic/includes/comment.html:71
+msgid "There are currently no comments"
+msgstr ""
+
+#: templates/generic/includes/comments.html:3
+msgid "Comments"
+msgstr ""
+
+#: templates/generic/includes/comments.html:17
+msgid "New Comment"
+msgstr ""
+
+#: templates/generic/includes/comments.html:25
+msgid "Comment"
+msgstr ""
+
+#: templates/generic/includes/rating.html:5
+msgid "Current rating"
+msgstr ""
+
+#: templates/generic/includes/rating.html:7
+msgid "Currently unrated"
+msgstr ""
+
+#: templates/generic/includes/rating.html:17
+msgid "Rate"
+msgstr ""
+
+#: templates/includes/editable_form.html:17
+#: templates/machina/forum_moderation/topic_move.html:24
+msgid "Cancel"
+msgstr ""
+
+#: templates/includes/editable_form.html:25
+#: templates/machina/forum_conversation/topic_detail.html:33
+msgid "Edit"
+msgstr ""
+
+#: templates/includes/editable_toolbar.html:8
+msgid "Admin"
+msgstr ""
+
+#: templates/includes/language_selector.html:19
+msgid "Change"
+msgstr ""
+
+#: templates/includes/search_form.html:5
+#: templates/machina/forum_search/search.html:5
+#: templates/machina/forum_search/search.html:12
+#: templates/machina/forum_search/search.html:33
+#: templates/machina/forum_search/search.html:43
+msgid "Search"
+msgstr ""
+
+#: templates/includes/search_form.html:14
+msgid "Everything"
+msgstr ""
+
+#: templates/includes/search_form.html:26
+msgid "Go"
+msgstr ""
+
+#: templates/index.html:193 templates/index.html:209 templates/index.html:225
+msgid ""
+"\n"
+"                                    赵客缦胡缨，吴钩霜雪明。银鞍照白马，飒沓"
+"如流星。\n"
+"                                    十步杀一人，千里不留行。事了拂衣去，深藏"
+"身与名。\n"
+"                                    闲过信陵饮，脱剑膝前横。将炙啖朱亥，持觞"
+"劝侯嬴。\n"
+"                                    三杯吐然诺，五岳倒为轻。眼花耳热后，意气"
+"素霓生。\n"
+"                                    救赵挥金槌，邯郸先震惊。千秋二壮士，烜赫"
+"大梁城。\n"
+"                                    纵死侠骨香，不惭世上英。谁能书阁下，白首"
+"太玄经。\n"
+"                                    床前明月光，疑似地上霜，举头望明月，低头"
+"思故乡\n"
+"                                "
+msgstr ""
+
+#: templates/index.html:203
+msgid "公司文化"
+msgstr ""
+
+#: templates/index.html:219
+msgid "公司简介"
+msgstr ""
+
+#: templates/index.html:235
+msgid "公司历程"
+msgstr ""
+
+#: templates/index.html:260
+msgid "Latest News"
+msgstr ""
+
+#: templates/langswitch.html:5 templates/langswitch.html:10
+msgid "Welcome to our page"
+msgstr ""
+
+#: templates/machina/board_base.html:37
+msgid "Search Forum..."
+msgstr ""
+
+#: templates/machina/board_base.html:44
+msgid "Advanced search"
+msgstr ""
+
+#: templates/machina/board_base.html:59
+msgid "Subscriptions"
+msgstr ""
+
+#: templates/machina/board_base.html:60
+msgid "View my messages"
+msgstr ""
+
+#: templates/machina/board_base.html:64
+#: templates/machina/forum_moderation/moderation_queue/detail.html:4
+#: templates/machina/forum_moderation/moderation_queue/detail.html:9
+#: templates/machina/forum_moderation/moderation_queue/list.html:4
+#: templates/machina/forum_moderation/moderation_queue/list.html:9
+#: templates/machina/forum_moderation/moderation_queue/list.html:32
+msgid "Moderation queue"
+msgstr ""
+
+#: templates/machina/forum/forum_detail.html:22
+msgid "Mark subforums read"
+msgstr ""
+
+#: templates/machina/forum/forum_detail.html:34
+#: templates/machina/forum/forum_detail.html:57
+#: templates/machina/forum_moderation/moderation_queue/detail.html:18
+#: templates/machina/forum_moderation/moderation_queue/list.html:66
+msgid "New topic"
+msgstr ""
+
+#: templates/machina/forum/forum_detail.html:42
+#: templates/machina/forum/forum_detail.html:65
+#: templates/machina/forum_tracking/mark_topics_read.html:5
+#: templates/machina/forum_tracking/mark_topics_read.html:11
+msgid "Mark topics read"
+msgstr ""
+
+#: templates/machina/forum/forum_detail.html:46
+msgid "Announcements"
+msgstr ""
+
+#: templates/machina/forum/forum_detail.html:50
+#: templates/machina/forum/forum_list.html:20
+#: templates/machina/forum/forum_list.html:38
+#: templates/machina/forum/forum_list.html:222
+msgid "Topics"
+msgstr ""
+
+#: templates/machina/forum/forum_list.html:21
+#: templates/machina/forum/forum_list.html:39
+#: templates/machina/forum/forum_list.html:223
+msgid "Posts"
+msgstr ""
+
+#: templates/machina/forum/forum_list.html:22
+#: templates/machina/forum/forum_list.html:40
+#: templates/machina/forum/forum_list.html:224
+#: templates/machina/forum_conversation/topic_list.html:14
+msgid "Last post"
+msgstr ""
+
+#: templates/machina/forum/forum_list.html:36
+#: templates/machina/forum/forum_list.html:220
+msgid "Forums"
+msgstr ""
+
+#: templates/machina/forum/forum_list.html:72
+#: templates/machina/forum/forum_list.html:154
+msgid "RSS feed"
+msgstr ""
+
+#: templates/machina/forum/forum_list.html:80
+#: templates/machina/forum/forum_list.html:162
+#: templates/machina/forum_conversation/topic_list.html:53
+#, python-format
+msgid "By: <a href=\"%(poster_url)s\">%(username)s</a>"
+msgstr ""
+
+#: templates/machina/forum/forum_list.html:84
+#: templates/machina/forum/forum_list.html:166
+#: templates/machina/forum_conversation/topic_list.html:57
+#, python-format
+msgid "By: %(poster_username)s"
+msgstr ""
+
+#: templates/machina/forum/forum_list.html:92
+#: templates/machina/forum/forum_list.html:174
+msgid "No posts"
+msgstr ""
+
+#: templates/machina/forum/forum_list.html:115
+#: templates/machina/forum/forum_list.html:197
+msgid "Total redirects:"
+msgstr ""
+
+#: templates/machina/forum/forum_list.html:204
+#: templates/machina/forum/forum_list.html:210
+msgid "Subforums:"
+msgstr ""
+
+#: templates/machina/forum/forum_list.html:230
+msgid "No forums."
+msgstr ""
+
+#: templates/machina/forum/index.html:6
+msgid "Index"
+msgstr ""
+
+#: templates/machina/forum/index.html:14
+#: templates/machina/forum_tracking/mark_forums_read.html:5
+#: templates/machina/forum_tracking/mark_forums_read.html:11
+msgid "Mark forums read"
+msgstr ""
+
+#: templates/machina/forum/index.html:16
+#: templates/machina/forum_tracking/unread_topic_list.html:4
+#: templates/machina/forum_tracking/unread_topic_list.html:10
+msgid "View unread topics"
+msgstr ""
+
+#: templates/machina/forum/index.html:23
+#: templates/machina/forum_member/forum_profile_detail.html:40
+msgid "Statistics"
+msgstr ""
+
+#: templates/machina/forum/index.html:24
+msgid "Total posts:"
+msgstr ""
+
+#: templates/machina/forum/index.html:24
+msgid "Total topics:"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_attachments/attachment_formset.html:29
+#: templates/machina/forum_member/forum_profile_update.html:20
+#: templates/machina/partials/form_field.html:6
+msgid "(optional)"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_attachments/attachment_formset.html:42
+msgid "Add another file"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_attachments/attachments_detail.html:8
+#: templates/machina/forum_conversation/forum_attachments/attachments_preview.html:7
+#: templates/machina/forum_conversation/partials/post_form.html:23
+#: templates/machina/forum_conversation/partials/post_form.html:61
+#: templates/machina/forum_conversation/partials/topic_form.html:27
+msgid "Attachments"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_polls/poll_detail.html:17
+#: templates/machina/forum_conversation/forum_polls/poll_preview.html:13
+msgid "You may select <b>1</b> option"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_polls/poll_detail.html:21
+#: templates/machina/forum_conversation/forum_polls/poll_preview.html:17
+#, python-format
+msgid "You may select up to <b>%(max_options)s</b> options"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_polls/poll_detail.html:40
+msgid "Vote"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_polls/poll_detail.html:44
+msgid "Change your vote"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_polls/poll_option_formset.html:5
+msgid "Poll options"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_polls/poll_option_formset.html:28
+msgid "Add a poll option"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_polls/poll_option_formset.html:32
+msgid ""
+"<b>Note:</b>&nbsp;Deleting poll options of an existing poll will delete the "
+"associated votes."
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_polls/poll_preview.html:9
+#: templates/machina/forum_conversation/post_preview.html:10
+msgid "Preview:"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_polls/poll_results.html:19
+msgid "Total votes:"
+msgstr ""
+
+#: templates/machina/forum_conversation/forum_polls/poll_vote_form.html:36
+msgid "View results"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/post_form.html:21
+#: templates/machina/forum_conversation/partials/topic_form.html:22
+msgid "Options"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:15
+msgid "Post reply"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:18
+msgid "Subscribe"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:20
+msgid "Unsubscribe"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:26
+#: templates/machina/forum_moderation/topic_lock.html:5
+#: templates/machina/forum_moderation/topic_lock.html:12
+msgid "Lock topic"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:27
+#: templates/machina/forum_moderation/topic_unlock.html:5
+#: templates/machina/forum_moderation/topic_unlock.html:12
+msgid "Unlock topic"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:28
+#: templates/machina/forum_moderation/topic_delete.html:5
+#: templates/machina/forum_moderation/topic_delete.html:12
+msgid "Delete topic"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:29
+#: templates/machina/forum_moderation/topic_move.html:5
+#: templates/machina/forum_moderation/topic_move.html:12
+msgid "Move topic"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:31
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:38
+msgid "Change to sticky topic"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:32
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:35
+msgid "Change to announce"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:34
+#: templates/machina/forum_conversation/partials/topic_detail_actions.html:37
+msgid "Change to standard topic"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_form.html:24
+msgid "Poll"
+msgstr ""
+
+#: templates/machina/forum_conversation/partials/topic_form.html:102
+#: templates/machina/forum_conversation/post_create.html:26
+#: templates/machina/forum_conversation/post_update.html:26
+msgid "Preview"
+msgstr ""
+
+#: templates/machina/forum_conversation/post_create.html:5
+#: templates/machina/forum_conversation/post_create.html:20
+msgid "Post a reply"
+msgstr ""
+
+#: templates/machina/forum_conversation/post_create.html:38
+#: templates/machina/forum_moderation/moderation_queue/detail.html:132
+msgid "Topic review"
+msgstr ""
+
+#: templates/machina/forum_conversation/post_create.html:50
+#: templates/machina/forum_conversation/topic_detail.html:52
+#: templates/machina/forum_conversation/topic_list.html:33
+#: templates/machina/forum_member/user_posts_list.html:50
+#: templates/machina/forum_moderation/moderation_queue/detail.html:85
+#: templates/machina/forum_moderation/moderation_queue/detail.html:144
+#: templates/machina/forum_moderation/moderation_queue/list.html:50
+#: templates/machina/forum_search/search.html:85
+#, python-format
+msgid "By: <a href=\"%(poster_url)s\">%(username)s</a> on %(creation_date)s"
+msgstr ""
+
+#: templates/machina/forum_conversation/post_create.html:54
+#: templates/machina/forum_conversation/topic_detail.html:56
+#: templates/machina/forum_conversation/topic_list.html:37
+#: templates/machina/forum_moderation/moderation_queue/detail.html:89
+#: templates/machina/forum_moderation/moderation_queue/detail.html:148
+#: templates/machina/forum_moderation/moderation_queue/list.html:54
+#: templates/machina/forum_search/search.html:89
+#, python-format
+msgid "By: %(poster_username)s on %(creation_date)s"
+msgstr ""
+
+#: templates/machina/forum_conversation/post_delete.html:5
+#: templates/machina/forum_conversation/post_delete.html:12
+msgid "Delete post"
+msgstr ""
+
+#: templates/machina/forum_conversation/post_delete.html:15
+msgid "Are you sure you want to delete this post?"
+msgstr ""
+
+#: templates/machina/forum_conversation/post_delete.html:18
+#: templates/machina/forum_member/topic_subscribe.html:18
+#: templates/machina/forum_member/topic_unsubscribe.html:18
+#: templates/machina/forum_moderation/moderation_queue/post_approve.html:18
+#: templates/machina/forum_moderation/moderation_queue/post_disapprove.html:18
+#: templates/machina/forum_moderation/topic_delete.html:18
+#: templates/machina/forum_moderation/topic_lock.html:18
+#: templates/machina/forum_moderation/topic_unlock.html:18
+#: templates/machina/forum_moderation/topic_update_type.html:18
+#: templates/machina/forum_tracking/mark_forums_read.html:16
+#: templates/machina/forum_tracking/mark_topics_read.html:16
+msgid "Yes"
+msgstr ""
+
+#: templates/machina/forum_conversation/post_delete.html:19
+#: templates/machina/forum_member/topic_subscribe.html:19
+#: templates/machina/forum_member/topic_unsubscribe.html:19
+#: templates/machina/forum_moderation/moderation_queue/post_approve.html:19
+#: templates/machina/forum_moderation/moderation_queue/post_disapprove.html:19
+#: templates/machina/forum_moderation/topic_delete.html:19
+#: templates/machina/forum_moderation/topic_lock.html:19
+#: templates/machina/forum_moderation/topic_unlock.html:19
+#: templates/machina/forum_moderation/topic_update_type.html:19
+#: templates/machina/forum_tracking/mark_forums_read.html:17
+#: templates/machina/forum_tracking/mark_topics_read.html:17
+msgid "No"
+msgstr ""
+
+#: templates/machina/forum_conversation/post_update.html:5
+#: templates/machina/forum_conversation/post_update.html:20
+#: templates/machina/forum_conversation/topic_update.html:5
+#: templates/machina/forum_conversation/topic_update.html:23
+msgid "Edit post"
+msgstr ""
+
+#: templates/machina/forum_conversation/topic_create.html:5
+#: templates/machina/forum_conversation/topic_create.html:23
+msgid "Post a new topic"
+msgstr ""
+
+#: templates/machina/forum_conversation/topic_detail.html:76
+msgid "Last edited by:"
+msgstr ""
+
+#: templates/machina/forum_conversation/topic_detail.html:76
+msgid "Updated"
+msgstr ""
+
+#: templates/machina/forum_conversation/topic_detail.html:76
+msgid "on"
+msgstr ""
+
+#: templates/machina/forum_conversation/topic_detail.html:76
+#, python-format
+msgid "edited %(counter)s time in total."
+msgid_plural "edited %(counter)s times in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/machina/forum_conversation/topic_detail.html:81
+msgid "Reason:"
+msgstr ""
+
+#: templates/machina/forum_conversation/topic_detail.html:100
+#: templates/machina/forum_moderation/moderation_queue/detail.html:119
+msgid "Anonymous user"
+msgstr ""
+
+#: templates/machina/forum_conversation/topic_list.html:12
+msgid "Replies"
+msgstr ""
+
+#: templates/machina/forum_conversation/topic_list.html:13
+msgid "Views"
+msgstr ""
+
+#: templates/machina/forum_conversation/topic_list.html:28
+msgid "This topic is locked"
+msgstr ""
+
+#: templates/machina/forum_conversation/topic_list.html:73
+msgid "There are no topics in this forum."
+msgstr ""
+
+#: templates/machina/forum_conversation/topic_pages_inline_list.html:5
+msgid "Go to the page:"
+msgstr ""
+
+#: templates/machina/forum_member/forum_profile_detail.html:4
+#: templates/machina/forum_member/forum_profile_detail.html:9
+#, python-format
+msgid "%(username)s profile"
+msgstr ""
+
+#: templates/machina/forum_member/forum_profile_detail.html:32
+msgid "Edit profile"
+msgstr ""
+
+#: templates/machina/forum_member/forum_profile_detail.html:45
+#, python-format
+msgid ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                    <p><small>Post</small></p>"
+msgid_plural ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                    <p><small>Posts</small></p>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/machina/forum_member/forum_profile_detail.html:50
+#, python-format
+msgid ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                    <p><small>Topic</small></p>"
+msgid_plural ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                    <p><small>Topics</small></p>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/machina/forum_member/forum_profile_detail.html:64
+msgid "Recent posts"
+msgstr ""
+
+#: templates/machina/forum_member/forum_profile_detail.html:64
+msgid "View all"
+msgstr ""
+
+#: templates/machina/forum_member/forum_profile_detail.html:74
+#, python-format
+msgid "On %(creation_date)s"
+msgstr ""
+
+#: templates/machina/forum_member/forum_profile_update.html:4
+#: templates/machina/forum_member/forum_profile_update.html:12
+msgid "Edit forum profile"
+msgstr ""
+
+#: templates/machina/forum_member/subscription_topic_list.html:4
+#: templates/machina/forum_member/subscription_topic_list.html:10
+msgid "Topics that you are subscribed to"
+msgstr ""
+
+#: templates/machina/forum_member/subscription_topic_list.html:17
+#, python-format
+msgid "%(counter)s topic found"
+msgid_plural "%(counter)s topics found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/machina/forum_member/subscription_topic_list.html:31
+msgid "Not topics found."
+msgstr ""
+
+#: templates/machina/forum_member/topic_subscribe.html:5
+#: templates/machina/forum_member/topic_subscribe.html:12
+msgid "Subscribe to topic"
+msgstr ""
+
+#: templates/machina/forum_member/topic_subscribe.html:15
+msgid "Would you like to subscribe to this topic?"
+msgstr ""
+
+#: templates/machina/forum_member/topic_unsubscribe.html:5
+#: templates/machina/forum_member/topic_unsubscribe.html:12
+msgid "Unsubscribe from topic"
+msgstr ""
+
+#: templates/machina/forum_member/topic_unsubscribe.html:15
+msgid "Would you like to unsubscribe from this topic?"
+msgstr ""
+
+#: templates/machina/forum_member/user_posts_list.html:4
+#: templates/machina/forum_member/user_posts_list.html:9
+msgid "My messages"
+msgstr ""
+
+#: templates/machina/forum_member/user_posts_list.html:4
+#: templates/machina/forum_member/user_posts_list.html:9
+#, python-format
+msgid "%(username)s's posts"
+msgstr ""
+
+#: templates/machina/forum_member/user_posts_list.html:17
+#, python-format
+msgid "%(counter)s post found"
+msgid_plural "%(counter)s posts found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/machina/forum_member/user_posts_list.html:24
+msgid "No posts found"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/detail.html:14
+msgid "Disapprove"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/detail.html:15
+msgid "Approve"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/detail.html:18
+msgid "New post"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/detail.html:31
+msgid "<b>1</b> option may be selected"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/detail.html:35
+#, python-format
+msgid "Up to <b>%(max_options)s</b> options may be selected"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/list.html:16
+#, python-format
+msgid "%(topic_length)s posts found"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/list.html:34
+msgid "Topic"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/list.html:35
+msgid "Forum"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/list.html:78
+msgid "No posts awaiting approval."
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/post_approve.html:5
+#: templates/machina/forum_moderation/moderation_queue/post_approve.html:12
+msgid "Approve post"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/post_approve.html:15
+msgid "Are you sure you want to approve this post?"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/post_disapprove.html:5
+#: templates/machina/forum_moderation/moderation_queue/post_disapprove.html:12
+msgid "Disapprove post"
+msgstr ""
+
+#: templates/machina/forum_moderation/moderation_queue/post_disapprove.html:15
+msgid ""
+"Are you sure you want to disapprove this post? This post will be deleted."
+msgstr ""
+
+#: templates/machina/forum_moderation/topic_delete.html:15
+msgid "Are you sure you want to delete this topic?"
+msgstr ""
+
+#: templates/machina/forum_moderation/topic_lock.html:15
+msgid "Are you sure you want to lock this topic?"
+msgstr ""
+
+#: templates/machina/forum_moderation/topic_move.html:23
+msgid "Move"
+msgstr ""
+
+#: templates/machina/forum_moderation/topic_unlock.html:15
+msgid "Are you sure you want to unlock this topic?"
+msgstr ""
+
+#: templates/machina/forum_moderation/topic_update_type.html:5
+#: templates/machina/forum_moderation/topic_update_type.html:12
+msgid "Change topic type"
+msgstr ""
+
+#: templates/machina/forum_search/search.html:19
+msgid "Search forums"
+msgstr ""
+
+#: templates/machina/forum_search/search.html:45
+msgid "New search"
+msgstr ""
+
+#: templates/machina/forum_search/search.html:51
+#, python-format
+msgid "Your search has returned <b>%(number_of_results)s</b> result"
+msgid_plural "Your search has returned <b>%(number_of_results)s</b> results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/machina/forum_search/search.html:71
+msgid "Results"
+msgstr ""
+
+#: templates/machina/forum_search/search.html:103
+msgid "No results."
+msgstr ""
+
+#: templates/machina/forum_tracking/mark_forums_read.html:13
+msgid "Are you sure you want to mark forums read?"
+msgstr ""
+
+#: templates/machina/forum_tracking/mark_topics_read.html:13
+msgid "Are you sure you want to mark topics read?"
+msgstr ""
+
+#: templates/machina/forum_tracking/unread_topic_list.html:17
+#, python-format
+msgid "%(topic_length)s unread topics found"
+msgstr ""
+
+#: templates/machina/forum_tracking/unread_topic_list.html:27
+msgid "There are no unread topics."
+msgstr ""
+
+#: templates/machina/partials/breadcrumb.html:4
+msgid "Forum index"
+msgstr ""
+
+#: templates/pages/category.html:265 templates/pages/classes.html:195
+msgid "Newest Products"
+msgstr ""
+
+#: templates/pages/category.html:266 templates/pages/classes.html:196
+msgid "Popular"
+msgstr ""
+
+#: templates/pages/category.html:268 templates/pages/classes.html:198
+msgid "All Products"
+msgstr ""
+
+#: templates/pages/category.html:325
+msgid "Click for details"
+msgstr ""
+
+#: templates/pages/menus/admin.html:31
+msgid "Add"
+msgstr ""
+
+#: templates/pages/menus/dropdown.html:43
+msgid "Profile"
+msgstr ""
+
+#: templates/search_results.html:5 templates/search_results.html:6
+#: templates/search_results.html:15
+msgid "Search Results"
+msgstr ""
+
+#: templates/search_results.html:22
+#, python-format
+msgid ""
+"\n"
+"No results were found in %(search_type)s matching your query: %(query)s\n"
+msgstr ""
+
+#: templates/search_results.html:26
+#, python-format
+msgid ""
+"\n"
+"Showing %(start)s to %(end)s of %(total)s results in %(search_type)s "
+"matching your query: %(query)s\n"
+msgstr ""
+
+#: templates/shop/billing_shipping.html:17
+#, python-format
+msgid ""
+"\n"
+"If you have an existing account or would like to create one, please\n"
+"<a href=\"%(login_url)s?next=%(next)s\">log in</a> or\n"
+"<a href=\"%(signup_url)s?next=%(next)s\">sign up</a>.\n"
+msgstr ""
+
+#: templates/shop/billing_shipping.html:30 templates/shop/confirmation.html:10
+#: templates/shop/includes/order_details.html:15
+#: templates/shop/includes/order_details_rtl.html:15
+msgid "Billing Details"
+msgstr ""
+
+#: templates/shop/billing_shipping.html:35
+msgid "Delivery Details"
+msgstr ""
+
+#: templates/shop/cart.html:4 templates/shop/cart.html:5
+msgid "Your Cart"
+msgstr ""
+
+#: templates/shop/cart.html:29 templates/shop/includes/order_details.html:39
+#: templates/shop/includes/order_details_rtl.html:45
+msgid "Item"
+msgstr ""
+
+#: templates/shop/cart.html:30 templates/shop/includes/order_details.html:40
+#: templates/shop/includes/order_details_rtl.html:44
+msgid "Unit Price"
+msgstr ""
+
+#: templates/shop/cart.html:31 templates/shop/includes/order_details.html:41
+#: templates/shop/includes/order_details_rtl.html:43
+msgid "Qty"
+msgstr ""
+
+#: templates/shop/cart.html:32 templates/shop/includes/order_details.html:42
+#: templates/shop/includes/order_details_rtl.html:42
+msgid "Price"
+msgstr ""
+
+#: templates/shop/cart.html:33
+msgid "Remove?"
+msgstr ""
+
+#: templates/shop/cart.html:72
+msgid "Update Cart"
+msgstr ""
+
+#: templates/shop/cart.html:80 templates/shop/checkout.html:4
+#: templates/shop/checkout.html:5
+msgid "Checkout"
+msgstr ""
+
+#: templates/shop/cart.html:106
+msgid "You may also like:"
+msgstr ""
+
+#: templates/shop/cart.html:137
+msgid "Your Cart is empty."
+msgstr ""
+
+#: templates/shop/cart.html:145
+msgid "Shop"
+msgstr ""
+
+#: templates/shop/checkout.html:5
+msgid "Step"
+msgstr ""
+
+#: templates/shop/checkout.html:5
+msgid "of"
+msgstr ""
+
+#: templates/shop/checkout.html:25 templates/shop/complete.html:58
+msgid "Complete"
+msgstr ""
+
+#: templates/shop/checkout.html:43
+msgid "Next"
+msgstr ""
+
+#: templates/shop/checkout.html:49
+msgid "Back"
+msgstr ""
+
+#: templates/shop/checkout.html:54
+msgid "Your cart is empty."
+msgstr ""
+
+#: templates/shop/checkout.html:55
+msgid ""
+"This may be due to your session timing out after a period of inactivity."
+msgstr ""
+
+#: templates/shop/checkout.html:56
+msgid "We apologize for the inconvenience."
+msgstr ""
+
+#: templates/shop/checkout.html:63 templates/shop/wishlist.html:44
+msgid "Continue Shopping"
+msgstr ""
+
+#: templates/shop/checkout.html:94
+msgid "Edit Cart"
+msgstr ""
+
+#: templates/shop/complete.html:6 templates/shop/complete.html:52
+msgid "Order Complete"
+msgstr ""
+
+#: templates/shop/complete.html:63
+msgid "Thank you for shopping with us, your order is complete."
+msgstr ""
+
+#: templates/shop/complete.html:64
+msgid "We've sent you a receipt via email."
+msgstr ""
+
+#: templates/shop/complete.html:65
+msgid "You can also view your invoice using one of the links below."
+msgstr ""
+
+#: templates/shop/complete.html:70
+msgid "Download PDF invoice"
+msgstr ""
+
+#: templates/shop/complete.html:72
+msgid "View invoice in your browser"
+msgstr ""
+
+#: templates/shop/complete.html:73
+msgid "Re-send order email"
+msgstr ""
+
+#: templates/shop/confirmation.html:25
+#: templates/shop/includes/order_details.html:16
+#: templates/shop/includes/order_details_rtl.html:16
+msgid "Shipping Details"
+msgstr ""
+
+#: templates/shop/includes/order_details.html:12
+#: templates/shop/includes/order_details_rtl.html:12
+msgid "Your Details"
+msgstr ""
+
+#: templates/shop/includes/order_details.html:36
+#: templates/shop/includes/order_details_rtl.html:36
+msgid "Items Ordered"
+msgstr ""
+
+#: templates/shop/includes/order_totals.html:4
+#: templates/shop/includes/order_totals.txt:2
+msgid "Sub total"
+msgstr ""
+
+#: templates/shop/includes/order_totals.html:12
+#: templates/shop/includes/order_totals.txt:4
+msgid "Discount"
+msgstr ""
+
+#: templates/shop/includes/order_totals.html:23
+#: templates/shop/includes/order_totals.txt:6
+msgid "Shipping"
+msgstr ""
+
+#: templates/shop/includes/order_totals.html:34
+#: templates/shop/includes/order_totals.txt:8
+msgid "Tax"
+msgstr ""
+
+#: templates/shop/includes/order_totals.html:39
+#: templates/shop/includes/order_totals.txt:9
+msgid "Total"
+msgstr ""
+
+#: templates/shop/includes/payment_fields.html:3
+msgid "Make Payment with our partners"
+msgstr ""
+
+#: templates/shop/order_history.html:4 templates/shop/order_history.html:5
+msgid "Order History"
+msgstr ""
+
+#: templates/shop/order_history.html:22
+msgid "View your orders here"
+msgstr ""
+
+#: templates/shop/order_history.html:32
+msgid "Track Order"
+msgstr ""
+
+#: templates/shop/order_history.html:33
+msgid "View Invoice"
+msgstr ""
+
+#: templates/shop/order_history.html:35
+msgid "Pay for Order"
+msgstr ""
+
+#: templates/shop/order_history.html:75
+msgid "You have not ordered anything from us yet."
+msgstr ""
+
+#: templates/shop/product.html:112
+msgid "Member Sale Price!"
+msgstr ""
+
+#: templates/shop/product.html:115
+msgid "Member Price!"
+msgstr ""
+
+#: templates/shop/product.html:121
+msgid "On Sale!"
+msgstr ""
+
+#: templates/shop/product.html:145 templates/shop/wishlist.html:34
+msgid "Buy"
+msgstr ""
+
+#: templates/shop/product.html:148
+msgid "Save for later"
+msgstr ""
+
+#: templates/shop/product.html:153
+msgid "This product is currently unavailable."
+msgstr ""
+
+#: templates/shop/product.html:173
+msgid "Related Products"
+msgstr ""
+
+#: templates/shop/wishlist.html:4 templates/shop/wishlist.html:5
+#: templates/shop/wishlist.html:9
+msgid "Your Wishlist"
+msgstr ""
+
+#: templates/shop/wishlist.html:35
+msgid "Remove"
+msgstr ""
+
+#: templates/shop/wishlist.html:42
+msgid "Your wishlist is empty."
+msgstr ""
+
+#: templates/twitter/tweets.html:7
+msgid "Recent Tweets"
+msgstr ""

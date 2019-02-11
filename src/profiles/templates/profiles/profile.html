@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags shop_tags accounts_tags static %}
+
+{% block meta_title %}{{ profile_user|username_or:"get_full_name" }}{% endblock %}
+{% block title %}{{ profile_user|username_or:"get_full_name" }}{% endblock %}
+{% block body_id %}account{% endblock %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block left_side %}
+{% endblock %}
+
+{% block center %}
+    <div class="col-sm-12 col-md-4 col-md-offset-4">
+
+    </div>
+
+    <div class="col-sm-12 col-md-4 col-md-offset-4 profile-title">
+        <h2>{{ profile_user.first_name }}</h2>
+        <div class="profile-level-yy2">
+            <span>金</span>
+        </div>
+        {#        <img class="profile-level-yy" src="{% static 'img/profile/yy-brush.png' %}">#}
+{#        <h2>{% trans 'Dear' %} {{ profile_user.username }}, {% trans 'here you can...' %}</h2>#}
+{#    </div>#}
+{##}
+{#    <div class="col-sm-12 col-md-4 col-md-offset-4 profile-upgrade">#}
+        <h4><em>{{ request.user.membership.level|capfirst }}</em> {% trans "member" %}</h4>
+{#        {% if request.user.membership.level != "diamond" %}#}
+{#            <a class="profile-edit-btn" href="{% url "upgrade" %}">#}
+{#                <span class="pull-left">{% trans "Upgrade membership" %}</span><i class="fa fa-angle-double-right fa-pull-right" aria-hidden="true"></i>#}
+{#            </a>#}
+{#        {% endif %}#}
+    </div>
+{#    <div class="col-sm-12  col-md-6 col-md-offset-3">#}
+{#        <h3>{% trans "Update profile" %}</h3>#}
+{#    </div>#}
+    <div class="col-sm-12 col-md-4 col-md-offset-4 profile-update-opts">
+        <span class="profile_tl">
+            <img src="{% static 'img/bloglist/bloglist_ul_grey.png'%}">
+        </span>
+        <span class="profile_br">
+            <img src="{% static 'img/bloglist/bloglist_br_grey.png'%}">
+        </span>
+        <div class="profile-opts-inner">
+            {% if request.user.membership.level != "diamond" %}
+                <a class="profile-edit-btn" href="{% url "upgrade" %}">
+                    <span class="pull-left">{% trans "Upgrade membership" %}</span><i class="fa fa-angle-double-right fa-pull-right orange-bg" aria-hidden="true"></i>
+                </a>
+            {% endif %}
+        {#    <br><a class="btn btn-primary" href="{% url "profile_update" %}">{% trans "Update profile" %}</a>#}
+            <a class="profile-edit-btn" href="{% url "update_email" %}">
+                <span class="pull-left">{% trans "Update Email" %}</span><i class="fa fa-angle-double-right fa-pull-right orange-bg" aria-hidden="true"></i>
+            </a>
+            <a class="profile-edit-btn" href="{% url "mezzanine_password_reset" %}">
+                <span class="pull-left">{% trans "Update Password" %}</span><i class="fa fa-angle-double-right fa-pull-right orange-bg" aria-hidden="true"></i>
+            </a>
+    {#        <a class="profile-edit-btn" href="{% url "update_address" %}">#}
+    {#            <span class="pull-left">{% trans "Update Address" %}</span><i class="fa fa-angle-double-right fa-pull-right" aria-hidden="true"></i>#}
+    {#        </a>#}
+            <a class="profile-edit-btn" href="{% url "update_birthday" %}">
+                <span class="pull-left">{% trans "Update Birthday" %}</span><i class="fa fa-angle-double-right fa-pull-right orange-bg" aria-hidden="true"></i>
+            </a>
+            <a class="profile-edit-btn" href="{% url "update_orientation" %}">
+                <span class="pull-left">{% trans "Update Orientation" %}</span><i class="fa fa-angle-double-right fa-pull-right orange-bg" aria-hidden="true"></i>
+            </a>
+            <a class="profile-edit-btn" href="{% url "shop_order_history" %}">
+                <span class="pull-left">{% trans "View all orders" %}</span><i class="fa fa-angle-double-right fa-pull-right orange-bg" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+{#<div class="profile-content col-md-6">#}
+{##}
+{##}
+{##}
+{#    {% for field, value in profile_user|profile_fields %}#}
+{#        <h3>{{ field }}</h3>#}
+{#        <p>{{ value|linebreaksbr }}</p>#}
+{#    {% endfor %}#}
+{#</div>#}
+<!-- orders  -->
+{#    <div class="col-sm-12 col-md-4 col-md-offset-4">#}
+{#        <h3>{% trans 'And you can view your orders, too' %}</h3>#}
+{#        {% for order in five_orders %}#}
+{#            <div class="profile-order{% if forloop.counter|divisibleby:2 %}{% else %}-bg{% endif %}">#}
+{#                <div>#}
+{#                    <span>#{{ order.id }} | {{ order.time|date:"SHORT_DATE_FORMAT" }}</span>#}
+{#                    <span class="pull-right">{{ order.total|currency }}</span>#}
+{#                </div>#}
+{#                <div class="profile-order-links">#}
+{#                    <a class="btn btn-sm btn-default" target="" href="{% url "track_order" order.id %}">{% trans "Track Order" %}</a>#}
+{#                    <a class="btn btn-sm btn-default pull-right" target="_blank" href="{% url "shop_invoice" order.id %}">{% trans "View Invoice" %}</a>#}
+{#                </div>#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#        <table class="table table-striped order-history">#}
+{#            <thead>#}
+{#                <th class="left">ID</th>#}
+{#                <th class="left">{% trans "Date" %}</th>#}
+{#                <th class="right">{% trans "Paid" %}</th>#}
+{#                <th>&nbsp;</th>#}
+{#                <th>&nbsp;</th>#}
+{#            </thead>#}
+{#            <tbody>#}
+{#            {% for order in five_orders %}#}
+{#            <tr>#}
+{#                <td class="left">{{ order.id }}</td>#}
+{#                <td class="left">{{ order.time|date:"SHORT_DATE_FORMAT" }}</td>#}
+{#                <td class="right">{{ order.total|currency }}</td>#}
+{#                <td class="right">#}
+{#                    <a class="btn btn-sm btn-default" target="" href="{% url "track_order" order.id %}">{% trans "Track Order" %}</a>#}
+{#                </td>#}
+{#                <td>#}
+{#                    <a class="btn btn-sm btn-default" target="_blank" href="{% url "shop_invoice" order.id %}">{% trans "View invoice" %}</a>#}
+{#                </td>#}
+{#                <td class="right">#}
+{#                    <form class="order-history-form" method="post" action="{% url "shop_invoice_resend" order.id %}?next={{ request.path }}">#}
+{#                        {% csrf_token %}#}
+{#                        {% if has_pdf %}#}
+{#                        <a class="btn btn-sm btn-primary" href="{% url "shop_invoice" order.id %}?format=pdf">{% trans "Download PDF" %}</a>#}
+{#                        {% endif %}#}
+{#                        <a class="btn btn-sm btn-default" target="_blank" href="{% url "shop_invoice" order.id %}">{% trans "View invoice" %}</a>#}
+{#                        <input type="submit" class="btn btn-sm btn-default" value="{% trans "Re-send order email" %}">#}
+{#                    </form>#}
+{#                </td>#}
+{#            </tr>#}
+{#            {% endfor %}#}
+{#            </tbody>#}
+{#        </table>#}
+{#        <a class="profile-edit-btn" href="{% url "shop_order_history" %}">{% trans "View all orders" %}</a>#}
+{#    </div>#}
+{% endblock center %}

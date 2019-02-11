@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load staticfiles i18n mezzanine_tags accounts_tags %}
+
+{% block meta_title %}{% trans "Upgrade Membership" %}{% endblock %}
+{% block title %}{% trans "Upgrade Membership" %}{% endblock %}
+{% block body_id %}{% trans "Upgrade Membership" %}{% endblock %}
+
+{% block left_side %}
+{% endblock %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block center %}
+{#    {% for choice in member_form.level %}#}
+{#        {{ choice.choice_label }}#}
+{#        <span class="radio">{{ choice.tag }}</span>#}
+{#    {% endfor %}#}
+{#    <form class="form-horizontal" method="POST" action="">{% csrf_token %}#}
+{#        {{ member_form }}#}
+{#        <input class="btn btn-default {{ submit_btn_class }}" type="submit" value="{{ submit_btn }}">#}
+{#    </form>#}
+
+{#    <div>#}
+{#        <form class="form-horizontal" method="POST" action="">{% csrf_token %}#}
+            <div id="change-member-cont">
+{#                {{ member_form.non_field_errors }}#}
+{#                {{ member_form.level.errors }}#}
+                <div class="col-md-4 col-sm-12 change-membership-choice-box">
+                    <div class="change-membership-body">
+                        <h2>{% trans "Regular" %}</h2>
+{#                        <h4>{{ membership_levels.regular.price.1 }} HKD/{% trans 'year' %}</h4>#}
+                        <h4>{% trans 'Free' %}</h4>
+                        <ul class="membership-list">
+                            <li>{{ membership_levels.regular.benefits.0 }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 btn-container change-membership-button-container">
+                        <a href="{% url 'membership_confirm' level='regular' %}">
+                            <div class="btn-base">
+                                <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>
+                                <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>
+                                <p>{% trans "Get Regular" %}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 change-membership-choice-box">
+                    <div class="change-membership-body">
+                        <h2>{% trans "Gold" %}</h2>
+                        <h4>{{ membership_levels.gold.price.1 }} HKD/{% trans 'year' %}</h4>
+                        <ul class="membership-list">
+                            {% for bene in membership_levels.gold.benefits %}
+                            <li>{{ bene }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 btn-container change-membership-button-container">
+                        <a href="{% url 'membership_confirm' level='gold' %}">
+                            <div class="btn-base">
+                                <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>
+                                <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>
+                                <p>{% trans "Get Gold" %}</p>
+                            </div>
+                        </a>
+                    </div>
+{#                    <span class="radio memberselect">{{ member_form.level.1.tag }}</span>#}
+                </div>
+                <div class="col-md-4 col-sm-12 change-membership-choice-box">
+                    <div class="change-membership-body">
+                        <h2>{% trans "Diamond" %}</h2>
+                        <h4>{{ membership_levels.diamond.price.1 }} HKD/{% trans 'year' %}</h4>
+                        <ul class="membership-list">
+                            {% for bene in membership_levels.diamond.benefits %}
+                            <li>{{ bene }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <hr class="change-membership-accent">
+                    <div class="col-sm-12 btn-container change-membership-button-container">
+                        <a href="{% url 'membership_confirm' level='diamond' %}">
+                            <div class="btn-base">
+                                <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>
+                                <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>
+                                <p>{% trans "Get Diamond" %}</p>
+                            </div>
+                        </a>
+                    </div>
+{#                    <span class="radio memberselect">{{ member_form.level.2.tag }}</span>#}
+                </div>
+            </div>
+{#        </form>#}
+{#    </div>#}
+{% endblock center %}
+
+{% block right_side %}
+{% endblock %}

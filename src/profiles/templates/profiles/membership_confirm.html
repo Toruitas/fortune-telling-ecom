@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load staticfiles i18n mezzanine_tags accounts_tags %}
+
+{% block meta_title %}{% trans 'Confirm' %}{% endblock %}
+{% block title %}{% trans 'Confirm' %}{% endblock %}
+{% block body_id %}change_membership{% endblock %}
+
+{% block left_side %}
+{% endblock %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block center %}
+
+
+<div class="col-md-4 col-md-offset-4 col-sm-12 change-membership-choice-box">
+    <div class="change-membership-body">
+        <h2>{% blocktrans %}{{ title }}{% endblocktrans %}</h2>
+        <h4>{{ confirm_level.price.1 }} HKD/year</h4>
+        <ul class="membership-list">
+            {% for bene in confirm_level.benefits %}
+            <li>{{ bene }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <hr class="change-membership-accent">
+    <form id="membership-confirm-form" class="form text" method="POST" action="">
+        {% csrf_token %}
+        {{ form }}
+        <div class="btn-base-input">
+            <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>
+            <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>
+            <input type="submit" class="btn-base" name="back" value='{{ submit_btn }}'>
+        </div>
+{#            <input class="change-membership-button" type="submit" value="{{ submit_btn }}">#}
+    </form>
+</div>
+
+
+
+{% endblock center %}
+
+{% block right_side %}
+{% endblock %}

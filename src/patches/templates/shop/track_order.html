@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags shop_tags accounts_tags %}
+
+{% block meta_title %}{% trans "Track your order" %}{% endblock %}
+{% block title %}{% trans "Track your order" %}{% endblock %}
+{% block body_id %}tracking{% endblock %}
+
+{% block breadcrumb_menu %}
+{% endblock %}
+
+{% block left_side %}
+{% endblock %}
+
+{% block center %}
+
+<div class="row min-height">
+<div class="col-sm-12 col-lg-6 col-lg-offset-3">
+    <h2 class="tracking-title">{% trans "Track My Order" %}</h2>
+    <p>{% blocktrans %}Copy and paste the following tracking number: {% endblocktrans %}</p>
+    <h5>{{ order.shipping_id }}</h5>
+    <p>{% blocktrans %}And visit the following shipping website to track your order: {% endblocktrans %}</p>
+    <h5><a href="{{ order.shipping_url }}">{{ order.shipping_url }}</a></h5>
+    <div class="track-order-button">
+        <a class="more-news-btn" href="{% url "shop_order_history" %}">{% trans "View orders" %}</a>
+    </div>
+</div>
+
+</div>
+{% endblock center %}

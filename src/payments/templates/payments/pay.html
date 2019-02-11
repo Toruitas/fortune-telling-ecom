@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+{% load staticfiles i18n mezzanine_tags accounts_tags patch_tags %}
+
+{% block meta_title %}{% trans 'Pay' %}{% endblock %}
+{% block title %}{% trans 'Pay' %}{% endblock %}
+{% block body_id %}{% trans 'Pay' %}{% endblock %}
+
+{% block left_panel %}
+{% endblock %}
+
+{% block breadcrumb_menu %}
+{% endblock %}
+
+{% block center %}
+<script src="https://js.stripe.com/v3/"></script>
+<div class="">
+    <div class="col-sm-12">
+        <h4 id="pay-header">{% trans 'Choose Payment Method' %}</h4>
+        <p id="pay-total">Total: {{ total_display|currency_2 }}</p>
+    </div>
+
+    <div class="col-xs-12 col-lg-4 col-lg-offset-4">
+        <div class="col-xs-4 payment-choice">
+            <div id="alipay-button" class="payment-button">
+                <img class="img-responsive payment-img" src="{% static 'img/payments/alipay_sm.png' %}">
+                <p>{% trans 'AliPay' %}</p>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div id="cc-button" class="payment-button">
+                <img class="img-responsive payment-img" src="{% static 'img/payments/cc_sm.png' %}">
+                <p>{% trans 'Credit Card' %}</p>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div id="wechat-button" class="payment-button">
+                <img class="img-responsive payment-img" src="{% static 'img/payments/wechat.svg' %}">
+                <p>{% trans 'WeChat Pay' %}</p>
+{#                <p>DISABLED</p>#}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4 col-md-offset-4">
+        <form id="cc-form" action="{% url 'payments:pay' %}" method="post">
+            {% csrf_token %}
+          <div class="form-row">
+            <label for="card-element">
+              {% trans 'Credit or debit card' %}
+            </label>
+            <div id="card-element">
+              <!-- a Stripe Element will be inserted here. -->
+            </div>
+
+            <!-- Used to display Element errors -->
+            <div id="card-errors" role="alert"></div>
+          </div>
+            <button class="btn-base">
+                <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>
+                <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>
+                <p>{% trans 'Submit Payment' %}</p>
+            </button>
+{#          <button>{% trans 'Submit Payment' %}</button>#}
+        </form>
+    </div>
+</div>
+
+{% endblock center %}
+
+{% block footer_js %}
+{{ block.super }}
+<script>
+    var stripe = Stripe('{{ stripe_pk }}');
+    var elements = stripe.elements();
+    {#    elements.locale = {{ LANGUAGE_CODE }};#}
+    var card = elements.create('card', {
+      style: {
+        base: {
+            fontSize: '16px',
+            lineHeight: '24px'
+        },
+      }
+    });
+    card.mount('#card-element');
+
+    $( "#alipay-button" ).click(function() {
+        $("#cc-form").hide();
+
+        stripe.createSource({
+          type: 'alipay',
+          amount: {{ total }},
+          currency: 'cny',
+          redirect: {
+            return_url: 'http://{{ request.get_host }}{% url "payments:alipay_payment_received" %}',
+          },
+        }).then(function(result) {
+            if(result.source){
+                var payload = {
+                    order_id:'{{ order_id }}',
+                    source: result.source
+                };
+                {# for getting CSRF token for AJAX submission #}
+                function getCookie(name) {
+                    var cookieValue = null;
+                    if (document.cookie && document.cookie !== '') {
+                        var cookies = document.cookie.split(';');
+                        for (var i = 0; i < cookies.length; i++) {
+                            var cookie = jQuery.trim(cookies[i]);
+                            // Does this cookie string begin with the name we want?
+                            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                break;
+                            }
+                        }
+                    }
+                    return cookieValue;
+                }
+                var csrftoken = getCookie('csrftoken');
+
+                function csrfSafeMethod(method) {
+                    // these HTTP methods do not require CSRF protection
+                    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+                }
+                $.ajaxSetup({
+                    beforeSend: function(xhr, settings) {
+                        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                        }
+                    }
+                });
+                {# To update order model with source JSON object #}
+                $.ajax({
+                    method:"POST",  //'post'
+                    dataType:"json",
+                    contentType:"application/json; charset=utf-8",
+                    url:"{% url 'payments:ajax_get_source_id' %}",  // doesn't have to be a form
+                    data: JSON.stringify(payload),  // from the JSON returned from the backend
+                    success: function(data){
+                        var redirect = result.source.redirect;
+                        $(location).attr('href',redirect.url);
+                    },
+                    error: function(data){
+                        console.log("failed")
+                    }});
+
+            }else{
+                console.log("error")
+            }
+        });
+    });
+
+    {#  FOR CREDIT CARD PROCESSING  #}
+    $( "#cc-button" ).click(function() {
+        $("#cc-form").show();
+
+        card.addEventListener('change', function(event) {
+          var displayError = document.getElementById('card-errors');
+          if (event.error) {
+            displayError.textContent = event.error.message;
+          } else {
+            displayError.textContent = '';
+          }
+        });
+
+        // Create a source or display an error when the form is submitted.
+        var form = document.getElementById('cc-form');
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+
+          stripe.createSource(card).then(function(result) {
+            if (result.error) {
+              // Inform the user if there was an error
+              var errorElement = document.getElementById('card-errors');
+              errorElement.textContent = result.error.message;
+            } else {
+              // Send the source to your server
+              stripeSourceHandler(result.source);
+            }
+          });
+        });
+
+        function stripeSourceHandler(source) {
+          // Insert the source ID into the form so it gets submitted to the server
+          var form = document.getElementById('cc-form');
+          var hiddenInput = document.createElement('input');
+          hiddenInput.setAttribute('type', 'hidden');
+          hiddenInput.setAttribute('name', 'stripeSource');
+          hiddenInput.setAttribute('value', source.id);
+          form.appendChild(hiddenInput);
+
+          // Submit the form
+            $(".loading-overlay").show();
+          form.submit();
+        }
+    });
+    $( "#wechat-button" ).click(function() {
+        $("#cc-form").hide();
+    });
+
+
+
+</script>
+{% endblock footer_js %}

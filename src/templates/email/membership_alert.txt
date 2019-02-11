@@ -1,0 +1,11 @@
+{% extends "email/base.txt" %}
+{% load i18n %}
+
+{% block main %}
+
+{% trans "Your membership will be expiring on " %}{{ end_date|date:"Y-m-d" }}
+{% trans "If you don't want to lose your benefits, follow this link to renew now." %}
+<a href="http://{{ request.get_host }}{% url 'profiles:upgrade' %}">{{ obj }}</a>
+{% trans "But if you don't care, you don't have to do a thing and your membership will be automatically downgraded" %}
+
+{% endblock %}

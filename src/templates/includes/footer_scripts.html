@@ -1,0 +1,41 @@
+{% load mezzanine_tags static %}
+
+{% editable_loader %}
+
+{% if settings.GOOGLE_ANALYTICS_ID and not request.user.is_staff %}
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '{{ settings.GOOGLE_ANALYTICS_ID }}', 'auto');
+ga('send', 'pageview');
+</script>
+{% endif %}
+
+{#<script>#}
+{#$(window).scroll(function() {#}
+{#  if ($(document).scrollTop() > 50) {#}
+{#    $('#nav-top').addClass('shrink');#}
+{#  } else {#}
+{#    $('#nav-top').removeClass('shrink');#}
+{#  }#}
+{# }); #}
+{#</script>#}
+
+{#<script>#}
+{#var lastScrollTop = 0;#}
+{##}
+{#window.addEventListener("scroll", function(){#}
+{#   var st = window.pageYOffset || document.documentElement.scrollTop;#}
+{#   if (st > lastScrollTop){#}
+{#       document.getElementById("topnav").style.top = "-224px";#}
+{#   } else {#}
+{#      document.getElementById("topnav").style.top = "0";#}
+{#   }#}
+{#   lastScrollTop = st;#}
+{#{, false);#}
+{#</script>#}
+<script src="{% static 'js/topbutton.js' %}"></script>
+<script>$('.carousel').bcSwipe({ threshold: 50 });</script>

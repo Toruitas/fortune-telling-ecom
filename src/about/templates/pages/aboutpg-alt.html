@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load mezzanine_tags i18n crispy_forms_tags static %}
+
+<!-- template used for about us, etc etc pages -->
+
+{% block meta_title %}{{ page.title }}{% endblock %}
+
+
+{% block breadcrumb %}
+{% endblock breadcrumb %}
+
+{% block left_side %}
+{% endblock %}
+
+{% block center %}{{ block.super }}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h2 class="about-title">{{ page.aboutpg.title }}</h2>
+        <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail page.aboutpg.image1 1100 550 %}">
+{#        <hr class="about-hr">#}
+        <div class="about-content-container">
+            {% editable page.aboutpg.content1 %}
+            {{ page.aboutpg.content1|richtext_filters|safe }}
+            {% endeditable %}
+        </div>
+{#        <div class="col-md-6 text-vertical-ch">#}
+{#            中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文.中文中文中文中文中文中文中文中文中文中文#}
+{#        </div>#}
+{#        <div class="col-md-6 text-vertical-en">#}
+{#            English English English English English English English English English English English English English English English English#}
+{#        </div>#}
+
+        <div class="about-form-cont">
+            <h1>{% trans 'Contact' %}</h1>
+            <form role="form" action="" method="post">
+                {% csrf_token %}
+                {% fields_for form %}
+                <div class="btn-base" type="submit">
+                    {% trans 'Submit' %}
+                    <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>
+                    <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block right_panel %}
+{% endblock %}

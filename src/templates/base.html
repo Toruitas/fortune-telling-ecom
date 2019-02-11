@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n staticfiles compress %}
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+<meta name="description" content="{% block meta_description %}{% endblock %}">
+<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+
+
+{% ifinstalled mezzanine.blog %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url 'blog_post_feed' 'rss' %}">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url 'blog_post_feed' 'atom' %}">
+{% endifinstalled %}
+
+{#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">#}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css" />
+{% compress css %}
+<!-- Latest compiled and minified CSS -->
+{#<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">#}
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+{#<link rel="stylesheet" href="{% static 'css/bootstrap.css.map' %}">#}
+{#<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">#}
+<link rel="stylesheet" href="{% static 'css/mezzanine.css' %}">
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static 'css/bootstrap-rtl.css' %}">
+{% endif %}
+{% ifinstalled cartridge.shop %}
+<link rel="stylesheet" href="{% static 'css/cartridge.css' %}">
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static 'css/cartridge.rtl.css' %}">
+{% endif %}
+{% endifinstalled %}
+{#<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">#}
+{#<link href="https://fonts.googleapis.com/css?family=Jim+Nightshade" rel="stylesheet">#}
+{#<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">#}
+{#<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">#}
+{#<link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">#}
+{#<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">#}
+{#<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Raleway" rel="stylesheet">#}
+{#<link href="https://fonts.googleapis.com/css?family=Adamina|Fira+Sans+Extra+Condensed|News+Cycle|Pavanam" rel="stylesheet">#}
+{% block extra_css %}{% endblock %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<style>
+    {% if LANGUAGE_CODE != "en" %}
+        .navbar-default .navbar-nav > li > a,
+        #language_selector_form > .form-group > select{
+            letter-spacing: 2px;
+            font-size: 16px;
+            text-align: center;
+        }
+    {% endif %}
+</style>
+{% endcompress %}
+
+{% compress js %}
+{#<script src="{% static 'mezzanine/js/'|add:settings.JQUERY_FILENAME %}"></script>#}
+<!-- Latest compiled and minified JavaScript -->
+<script src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
+{#<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>#}
+{#<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>#}
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bootstrap-extras.js' %}"></script>
+<script src="{% static 'js/jquery.bcSwipe.min.js' %}"></script>
+
+{% block extra_js %}{% endblock %}
+{% endcompress %}
+
+<!--[if lt IE 9]>
+<script src="{% static 'js/html5shiv.js' %}"></script>
+<script src="{% static 'js/respond.min.js' %}"></script>
+<![endif]-->
+
+{% block extra_head %}{% endblock %}
+</head>
+
+<body id="{% block body_id %}body{% endblock %}" class="bg">
+
+<div id="topnav" class="navbar navbar-default borderless" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" id="nav-top">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+                            aria-expanded="false" aria-controls="collapseMenu">
+                        <span class="sr-only">{% trans "Toggle Navigation" %}</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    {% block navbar_title %}
+                        <a href="/">
+                            <img class="hidden-sm hidden-xs" id="logo" src="{% static 'img/decor/logo.png' %}">
+                            <img class="hidden-lg hidden-md img-responsive" id="mobile-logo" src="{% static 'img/logos/se-logo-white-r2.png' %}">
+                        </a>
+                {#        {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}#}
+                {#        {% if settings.SITE_TAGLINE %}<p class="navbar-text visible-lg">{{ settings.SITE_TAGLINE }}</p>{% endif %}#}
+                    {% endblock%}
+                </div>
+            </div>
+{#            {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}#}
+{#            <div class="navbar-right nav-search">#}
+{#                {% search_form %}#}
+{#            </div>#}
+
+        </div>
+    </div>
+    <div id="navbar-bottom" class="navbar-collapse collapse">
+        <div class="container">
+            <div class="row">
+                {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
+            </div>
+        </div>
+    </div>
+{#    <div class="fs-separator"></div>#}
+
+</div>
+
+{% block submenu %}
+
+            {% block breadcrumb %}
+        {#        <ul class="breadcrumb">#}
+        {#        {% spaceless %}#}
+        {#        {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}#}
+        {#        {% endspaceless %}#}
+        {#        </ul>#}
+            {% endblock breadcrumb %}
+            {% block navbar_search_form %}
+        {#        {% block navbar_search_form %} #}
+            {% endblock navbar_search_form %}
+
+{% endblock submenu %}
+
+<div id="main-container">
+    {% nevercache %}
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% endnevercache %}
+
+{#    <h1 class="center">{% block title %}{% endblock %}</h1>#}
+
+    {% block carousel %}
+    {% endblock %}
+
+    {% block main-content %}
+    <div class="container main-content">
+{#        {% nevercache %}#}
+{#        {% if messages %}#}
+{#            <div class="messages">#}
+{#                {% for message in messages %}#}
+{#                    <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">#}
+{#                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>#}
+{#                        {{ message }}#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        {% endif %}#}
+{#        {% endnevercache %}#}
+{#    #}
+    {#    <h1 class="center">{% block title %}{% endblock %}</h1>#}
+{#    #}
+{#        {% block carousel %}#}
+{#        {% endblock %}#}
+
+
+
+
+        <div class="row">
+            {% block body %}
+{#            {% block breadcrumb %}#}
+{#                <ul class="breadcrumb">#}
+{#                {% spaceless %}#}
+{#                {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}#}
+{#                {% endspaceless %}#}
+{#                </ul>#}
+{#            {% endblock breadcrumb %}#}
+
+            {% block left_side %}
+{#            <div class="hidden-xs-block col-sm-2 col-md-2 col-lg-2 left">#}
+                {% block left_panel %}
+{#                <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>#}
+                {% endblock %}
+{#            </div>#}
+            {% endblock %}
+
+
+            {% block center %}
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 middle">
+                {% block main %}{% endblock %}
+            </div>
+            {% endblock %}
+
+            {% block right_side %}
+                {% block right_panel %}{% endblock %}
+            {% endblock %}
+            {% endblock body %}
+        </div>
+    </div>
+{% endblock main-content %}
+
+{% block more-button %}
+{% endblock %}
+
+</div>
+
+
+
+<footer>
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <p class="site-info text-center">#}
+{#                <a href="{% url 'about' %}">{% trans "About" %}</a>#}
+{#                <span class="separator">|</span>#}
+{#                <a href="{% url 'terms' %}">{% trans "Terms and Conditions" %}</a>#}
+{#                <span class="separator">|</span>#}
+{#                <a href="{% url 'privacy' %}">{% trans "Privacy" %}</a>#}
+{#                <span class="separator">|</span>#}
+{#                <a href="{% url 'contact' %}">{% trans "Contact" %}</a>#}
+{#                <span class="separator">|</span>#}
+{#                {% trans "Copyright" %} © 2017. SE-Brilliant.co#}
+{#            </p>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#        <p class="site-info text-center">#}
+{#            {% trans "Powered by" %}#}
+{#            <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},#}
+{#            <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}#}
+{#            {% trans "and" %}#}
+{#            <a href="http://www.djangoproject.com">Django</a>#}
+{#            <span class="separator">|</span>#}
+{#            {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>#}
+{#            {% ifinstalled mezzanine.mobile %}#}
+{#            <span class="separator">|</span>#}
+{#            <a href="{% url 'set_device' 'mobile' %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>#}
+{#            {% endifinstalled %}#}
+{#        </p>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="fs-separator"></div>#}
+{#    {% page_menu "pages/menus/footer.html" %}#}
+{#    <div id="footer-bottom">#}
+{#        <img class="logo" src="{% static 'img/SE logo139x52.png' %}">#}
+{#        <p>{% trans "SE Brilliant Ltd © All Rights Reserved." %}</p>#}
+{#    </div>#}
+    <div class="footer">
+        <div class="footer_top">
+            <div class="container" style="position:relative;">
+            <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    {#            <li class="col-xs-3 col-sm-3 col-md-3 col-lg-3"><a href="#" target="_blank">{% trans 'About Us' %}</a></li>#}
+                <li class="col-xs-15"><a href="{% url 'page' 'about-us' %}">{% trans 'About Us' %}</a></li>
+                <li class="col-xs-15"><a href="{% url 'page' 'privacy' %}">{% trans 'Privacy Policy' %}</a></li>
+                <li class="col-xs-15">
+                    <a href="/" class="bottom_logo"><img src="{% static 'img/decor/logo.jpg' %}" alt="万达文化" class=""></a>
+                </li>
+                <li class="col-xs-15"></li>
+                <li class="col-xs-15">
+                    <a href="{% url 'page' 'tc' %}">{% trans "Terms and Conditions" %}</a>
+
+                </li>
+            </ul>
+            <span class="footer_bq">Copyright © 2017 SE Brilliant</span>
+            </div>
+        </div>
+{#        <div class="footer_bottom">&nbsp;</div>#}
+        </div>
+    </footer>
+
+{% block footer_js %}
+{% include "includes/footer_scripts.html" %}
+{% endblock footer_js %}
+
+</body>
+<div class="loading-overlay">
+    <div id="loading-img"></div>
+</div>
+</html>

@@ -1,0 +1,14 @@
+{% load i18n pages_tags mezzanine_tags %}
+<div>
+{% block breadcrumb_menu %}
+    <ul class="breadcrumb">
+        {% spaceless %}
+        {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
+        {% endspaceless %}
+    </ul>
+{% endblock %}
+
+{% block navbar_search_form %}
+    {% search_form "all" %}
+{% endblock %}
+</div>

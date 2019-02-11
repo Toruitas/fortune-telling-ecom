@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% load i18n static pages_tags mezzanine_tags blog_tags keyword_tags disqus_tags %}
+
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Blog" %}{% endif %}{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for page as keywords %}
+{% for keyword in keywords %}
+    {% if not forloop.first %}, {% endif %}
+    {{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock %}
+
+
+{% block meta_description %}{% metablock %}
+{{ page.description }}
+{% endmetablock %}{% endblock %}
+
+{% block submenu %}
+    <div class="container submenu-cont">
+        <div class="row submenu">
+            {% block breadcrumb %}
+                {% block breadcrumb_menu %}
+                    <ul class="breadcrumb col-xs-6 col-lg-8">
+                    {% if tag or category or year or month or author %}
+                        <a style="color:black;" href="{% url 'blog_post_list' %}">{{ page.title|capfirst }}</a> >>
+                        <li>{% spaceless %}
+                        {% if tag %}
+                            {% trans "Tag:" %} {{ tag }}
+                        {% else %}{% if category %}
+                            {% trans "Category:" %} {{ category }}
+                        {% else %}{% if year or month %}
+                            {% if month %}{{ month }}, {% endif %}{{ year }}
+                        {% else %}{% if author %}
+                            {% trans "Author:" %} {{ author.get_full_name|default:author.username }}
+                        {% endif %}{% endif %}{% endif %}{% endif %}
+                        {% endspaceless %}
+                        </li>
+                    {% else %}
+                        {% page_menu "pages/menus/breadcrumb.html" %}
+                    {% endif %}
+                    </ul>
+                {% endblock %}
+            {% endblock breadcrumb %}
+            {% block navbar_search_form %}
+                <div class="navbar-right nav-search col-xs-6 col-lg-4">
+                    {% search_form "shop.Products" %}
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock submenu %}
+
+{% block carousel %}
+<div class="row no-margin visible-lg-block visible-md-block visible-sm-block">
+    <div class="col-xs-12 bloglist-main-img-cont">
+        <img class="bloglist-main-img" src="{% static 'img/bloglist/bloglist_banner_sm_2.png' %}">
+    </div>
+</div>
+<div class="visible-xs-block">
+    <div class="mobile-hero">
+        <img class="mobile-hero-img img-responsive" src="{% static 'img/bloglist/bloglist_banner_sm_2_mobi.png' %}">
+    </div>
+</div>
+{% endblock carousel %}
+
+
+{% block main-content %}
+
+    <div class="bloglist-container">
+        <div class="bloglist-bg">
+            {#  Category pagination #}
+{#            {% if tag or category or year or month or author %}#}
+{#                <a style="color:black;" href="{% url 'blog_post_list' %}">{{ page.title|capfirst }}</a> |#}
+{#                <li>{% spaceless %}#}
+{#                {% if tag %}#}
+{#                    {% trans "Tag:" %} {{ tag }}#}
+{#                {% else %}{% if category %}#}
+{#                    {% trans "Category:" %} {{ category }}#}
+{#                {% else %}{% if year or month %}#}
+{#                    {% if month %}{{ month }}, {% endif %}{{ year }}#}
+{#                {% else %}{% if author %}#}
+{#                    {% trans "Author:" %} {{ author.get_full_name|default:author.username }}#}
+{#                {% endif %}{% endif %}{% endif %}{% endif %}#}
+{#                {% endspaceless %}#}
+{#                </li>#}
+{#            {% endif %}#}
+            {#  SECTION FOR SELECTED POSTS  #}
+            {% if featured_posts %}
+            <div class="container bloglist-title">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h3 class="ch-title">精选</h3>
+                        <h4 class="bloglist-subtitle">SELECTED</h4>
+                    </div>
+                </div>
+            </div>
+            {% for featured_post in featured_posts %}
+                <div class="container bloglist-post-container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                            {% if settings.BLOG_USE_FEATURED_IMAGE and featured_post.featured_image %}
+                                {% block featured_post_list_post_featured_image %}
+                                    <a href="{{ featured_post.get_absolute_url }}">
+                                        <div class="blog-img-cont">
+                                    {#      <img class="img-thumbnail pull-left" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 90 90 %}">#}
+                                            <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail featured_post.featured_image 630 345 %}">
+                                        </div>
+                                    </a>
+                                {% endblock %}
+                            {% endif %}
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 blog-list-post">
+                            <span class="about_tl">
+                                <img src="{% static 'img/bloglist/bloglist_ul_grey.png'%}">
+                            </span>
+                            <span class="about_br">
+                                <img src="{% static 'img/bloglist/bloglist_br_grey.png'%}">
+                            </span>
+                            <dl class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <dt class="col-sm-2 col-md-2 col-lg-2 bl-date visible-lg-block visible-md-block visible-sm-block">
+                                    <span class="date">
+                                        <div class="month">{{ featured_post.publish_date.month }}</div>
+                                        <div class="day">{{ featured_post.publish_date.day }}</div>
+                                        <div class="year">{{ featured_post.publish_date.year }}</div>
+                                    <em></em>
+                                    </span>
+                                </dt>
+                                <dd class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    {% block featured_post_list_post_title %}
+                                        {% editable featured_post.title %}
+                                        <h2 class="blog-list-post-title">
+                                            <a href="{{ featured_post.get_absolute_url }}">{{ featured_post.title }}</a>
+                                        </h2>
+                                        {% endeditable %}
+                                    {% endblock %}
+        {#                            <a href="{{ featured_post.get_absolute_url }}" target="_blank">#}
+                                    {% block featured_post_list_post_metainfo %}
+                                    {% editable %}
+                                    <h6 class="post-meta">
+                                        {% trans "Posted by" %}:
+                                        {% with featured_post.user as author %}
+                                        <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
+                                        {% endwith %}
+                                        {% with featured_post.categories.all as categories %}
+                                        {% if categories %}
+                                        {% trans "in" %}
+                                        {% for category in categories %}
+                                        <a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a>{% if not forloop.last %}, {% endif %}
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endwith %}
+    {#                                    {% blocktrans with sometime=blog_post.publish_date|date %}{{ sometime }}{% endblocktrans %}#}
+                                    </h6>
+                                    {% endeditable %}
+                                    {% endblock %}
+                                    {% if LANGUAGE_CODE == "en" %}
+                                    {% editable %}{{ featured_post.content|richtext_filters|safe|truncatewords:30 }}{% endeditable %}
+                                    {% else %}
+                                    {% editable %}{{ featured_post.content|richtext_filters|safe|truncatewords:20 }}{% endeditable %}
+                                    {% endif %}
+                                </dd>
+                            </dl>
+                            <div class="bl-date bl-date-2 visible-xs-block">
+                                <span class="date">
+                                    <div class="month">{{ featured_post.publish_date.month }}</div>
+                                    <div class="day">{{ featured_post.publish_date.day }}</div>
+                                    <div class="year">{{ featured_post.publish_date.year }}</div>
+                                <em></em>
+                                </span>
+                            </div>
+                            <a href="{{ featured_post.get_absolute_url }}" class="blog-list-more-btn">
+                                <img src="{% static 'img/decor/more.png' %}" alt="更多">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% endif %}
+            {#  SECTION FOR NEWEST POSTS  #}
+            <div class="container bloglist-title">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h3 class="ch-title">最新</h3>
+                    <h4 class="bloglist-subtitle">NEWEST</h4>
+                </div>
+            </div>
+            {% include page_template %}
+{#        <div class="row">#}
+{#            <div class="col-sm-12" id="pagination-cont">#}
+{#                {% pagination_for blog_posts %}#}
+{#            </div>#}
+{#        </div>#}
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 cd-top-cont">
+                    <a href="#0" class="cd-top">
+                        <img src="{% static 'img/toparrow.png' %}">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock main-content %}
+
+{% block more-button %}
+<div class="">
+    <div class="more-bar-bg">
+        <p class="more-bar-content">
+            {% trans "End of the line" %}
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer_js %}
+    {{ block.super }}
+{#    <script src="http://code.jquery.com/jquery-latest.js"></script>#}
+    <script src="{{ STATIC_URL }}el-pagination/js/el-pagination.js"></script>
+{#    <script>$.endlessPaginate();</script>#}
+    <script>
+        $.endlessPaginate({
+            paginateOnScroll: true,
+            paginateOnScrollMargin: 20
+        });
+    </script>
+{% endblock %}

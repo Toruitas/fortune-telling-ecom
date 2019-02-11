@@ -1,0 +1,11 @@
+{% extends "email/base.txt" %}
+{% load i18n %}
+
+{% block main %}
+{% trans "Thanks for signing up for our Feng Shui Class!" %}
+    {% for class in classes %}
+{% trans "Class Name" %}: {{ class.title|safe }}
+{% trans "Class Details" %}: {{ class.content|safe }}
+{% endfor %}
+{% trans "Please email us for any changes or cancelations" %}:{{ SHOP_ORDER_FROM_EMAIL }}
+{% endblock %}

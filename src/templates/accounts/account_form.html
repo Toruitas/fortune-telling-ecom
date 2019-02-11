@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static i18n mezzanine_tags %}
+
+{% block meta_title %}{{ title }}{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block body_id %}account{% endblock %}
+
+{% block breadcrumb_menu %}
+{% endblock %}
+
+{% block left_side %}
+{% endblock %}
+
+{% block center %}
+<div class="col-sm-12 col-md-4 col-md-offset-4 min-height">
+{% block main %}
+{% errors_for form %}
+
+<form class="generic-form" method="post"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+    <fieldset>
+    <legend>{{ title }}</legend>
+    {% fields_for form %}
+    <div class="form-actions">
+        {% block account_form_actions %}
+        <div class="btn-base-input">
+            <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>
+            <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>
+            <input class="btn-input" type="submit" value="{{ title }}">
+        </div>
+
+{#        <div class="col-sm-12 btn-container" id="article-btn-container">#}
+{#            <a href="{% url 'upgrade' %}">#}
+{#                <div class="btn-base">#}
+{#                    <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>#}
+{#                    <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>#}
+{#                    <p>{% trans "Get Premium" %}</p>#}
+{#                </div>#}
+{#                </a>#}
+{#                    <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>#}
+{#                    <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>#}
+{#                    <a href="{% url 'upgrade' %}" class="btn-base">{% trans "Get Premium" %}</a>#}
+{#        </div>#}
+        {% endblock %}
+    </div>
+    </fieldset>
+</form>
+{% endblock main %}
+</div>
+{% endblock center %}
+
+{% block right_side %}
+{% endblock %}

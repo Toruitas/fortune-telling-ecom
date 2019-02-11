@@ -1,0 +1,298 @@
+{% extends "base.html"  %} <!--blog/blog_post_list.html-->
+{% load mezzanine_tags pages_tags static comment_tags keyword_tags rating_tags i18n disqus_tags %}
+
+{% block meta_title %}{{ blog_post.meta_title }}{% endblock %}
+
+{% block extra_css %}
+{#<link rel="stylesheet" href="{% static 'css/jssocials-theme-flat.css' %}">#}
+{#<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.2.1/jssocials-theme-flat.css" />#}
+{% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
+    <style>
+        .blog-main-img-cont:before{
+            content:'';
+            position:absolute;
+            display:block;
+            width:100%;
+            height:100%;
+            background: url("{{ MEDIA_URL }}{{ blog_post.featured_image }}");
+            filter: blur(10px);
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -o-filter: blur(10px);
+            -ms-filter: blur(10px);
+            z-index:-1;
+            background-size:cover;
+            background-position: center center;
+            /*opacity:0.5;*/
+        }
+    </style>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+{#<script type="text/javascript" src="{% static 'js/jssocials.min.js' %}"></script>#}
+{#<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.2.1/jssocials.min.js"></script>#}
+{% endblock extra_js %}
+
+{% block meta_keywords %}{% metablock %}
+<!-- keywords in meta stuff in admin -->
+{% keywords_for blog_post as tags %}
+{% for tag in tags %}{% if not forloop.first %}, {% endif %}{{ tag }}{% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ blog_post.description }}
+{% endmetablock %}{% endblock %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block submenu %}
+    <div class="container">
+        <div class="row submenu">
+            {% block breadcrumb %}
+                {% block breadcrumb_menu %}
+                    <ul class="breadcrumb col-lg-8">
+                        {% page_menu "pages/menus/breadcrumb.html" %}
+                    </ul>
+                {% endblock %}
+            {% endblock breadcrumb %}
+            {% block navbar_search_form %}
+                <div class="navbar-right nav-search col-lg-4">
+                    {% search_form "blog.BlogPost" %}
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock submenu %}
+
+{% block carousel %}
+{% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
+<div class="row no-margin">
+    <div class="col-xs-12 blog-main-img-cont">
+        <img class="blog-main-img" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 1280 720  %}">
+    </div>
+</div>
+{% endif %}
+{% endblock carousel %}
+
+{% block left_side %}
+{#<div class="col-md-1"><!--empty--></div>#}
+{% endblock left_side %}
+
+
+{% block center %}
+<div class="col-xs-12 col-md-12 blog-main-cont">
+{#{% editable blog_post.title %}#}
+{#    {{ blog_post.title }}#}
+{#{% endeditable %}#}
+{#{% block blog_post_detail_postedby %}#}
+{#{% editable blog_post.publish_date %}#}
+{#<h6 class="post-meta">#}
+{#    {% trans "Posted by" %}:#}
+{#    {% with blog_post.user as author %}#}
+{#    <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>#}
+{#    {% endwith %}#}
+{#    {% blocktrans with sometime=blog_post.publish_date|date %}{{ sometime }}{% endblocktrans %}#}
+{#</h6>#}
+{#{% endeditable %}#}
+{#{% endblock blog_post_detail_postedby %}#}
+
+{% block blog_post_detail_commentlink %}
+{#    https://onetwodev.disqus.com/admin/install/platforms/universalcode/#}
+{#<p>#}
+{#    {% if blog_post.allow_comments %}#}
+{#        {% if settings.COMMENTS_DISQUS_SHORTNAME %}#}
+{#            (<a href="{{ blog_post.get_absolute_url }}#disqus_thread"#}
+{#                data-disqus-identifier="{% disqus_id_for blog_post %}">{% spaceless %}#}
+{#                {% trans "Comments" %}#}
+{#            {% endspaceless %}</a>)#}
+{#        {% else %}(<a href="#comments">{% spaceless %}#}
+{#            {% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}#}
+{#            {% endspaceless %}</a>)#}
+{#        {% endif %}#}
+{#    {% endif %}#}
+{#</p>#}
+{% endblock blog_post_detail_commentlink %}
+
+
+{#{% if settings.COMMENTS_DISQUS_SHORTNAME %}#}
+{#{% include "generic/includes/disqus_counts.html" %}#}
+{#{% endif %}#}
+
+<!-- content 1 -->
+{% block blog_post_detail_content %}
+{#{% editable blog_post.content %}#}
+{#{% if request.user.membership.is_member %}#}
+{#    {{ blog_post.content|richtext_filters|safe }}#}
+{#{% else %}#}
+{#    {{ blog_post.content|richtext_filters|safe|truncatewords_html:100 }}#}
+{#    <hr>#}
+{#    <h3>{% trans 'Become a premium member to finish reading...' %}</h3>#}
+{#    <div class="col-sm-12 change-membership-button-container">#}
+{#        <a href="{% url 'upgrade' %}" class="change-membership-button">{% trans "Get Premium" %}</a>#}
+{#    </div>#}
+{#{% endif %}#}
+{#{% endeditable %}#}
+
+    <dl class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <dt class="col-xs-12 col-md-2">
+            <span class="col-xs-8 date">
+            <div class="month">{{ blog_post.publish_date.month }}</div>
+            <div class="day">{{ blog_post.publish_date.day }}</div>
+            <div class="year">{{ blog_post.publish_date.year }}</div>
+            <em></em>
+            </span>
+        </dt>
+        <dd class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+            {% block blog_post_list_post_title %}
+                {% editable blog_post.title %}
+                <h1 class="blog-list-post-title">
+                    <a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a>
+                </h1>
+                {% endeditable %}
+            {% endblock %}
+    {#                            <a href="{{ blog_post.get_absolute_url }}" target="_blank">#}
+            {% block blog_post_list_post_metainfo %}
+            {% editable %}
+            <h6 class="post-meta">
+                {% trans "Posted by" %}:
+                {% with blog_post.user as author %}
+                <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
+                {% endwith %}
+                {% with blog_post.categories.all as categories %}
+                {% if categories %}
+                {% trans "in" %}
+                {% for category in categories %}
+                <a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a>{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+    {#                                    {% blocktrans with sometime=blog_post.publish_date|date %}{{ sometime }}{% endblocktrans %}#}
+            </h6>
+            {% endeditable %}
+            {% endblock %}
+            {% if request.user.membership.is_member %}
+                {% editable %}
+                <div class="blog-post-content">
+                {{ blog_post.content|richtext_filters|safe }}
+                </div>
+                {% endeditable %}
+{#                DISQUS COMMENTS #}
+                {% block blog_post_detail_comments %}
+                        {% if blog_post.allow_comments %}{% comments_for blog_post %}{% endif %}
+                {% endblock blog_post_detail_comments %}
+        </dd>
+    </dl>
+            {% else %}
+                {% editable %}
+                <div class="blog-post-content">
+                {{ blog_post.content|richtext_filters|safe|truncatewords_html:100 }}
+                </div>
+                {% endeditable %}
+                <hr>
+                <h4 class="bl-become-premium-prompt">{% trans 'Become a premium member to finish reading...' %}</h4>
+        </dd>
+    </dl>
+                <div class="col-sm-12 btn-container" id="article-btn-container">
+                    <a href="{% url 'upgrade' %}">
+                        <div class="btn-base">
+                            <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>
+                            <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>
+                            <p>{% trans "Get Premium" %}</p>
+                        </div>
+                    </a>
+{#                    <span class="btn_tl"><img src="{% static 'img/decor/white_tl.png' %}" class="img-responsive"></span>#}
+{#                    <span class="btn_br"><img src="{% static 'img/decor/white_br.png' %}" class="img-responsive"></span>#}
+{#                    <a href="{% url 'upgrade' %}" class="btn-base">{% trans "Get Premium" %}</a>#}
+                </div>
+            {% endif %}
+{#        </dd>#}
+{#    </dl>#}
+{% endblock blog_post_detail_content %}
+
+
+{#{% block blog_post_detail_keywords %}#}
+{#{% keywords_for blog_post as tags %}#}
+{#{% if tags %}#}
+{#{% spaceless %}#}
+{#<ul class="list-inline tags">#}
+{#    <li>{% trans "Tags" %}:</li>#}
+{#    {% for tag in tags %}#}
+{#    <li><a href="{% url "blog_post_list_tag" tag.slug %}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}</li>#}
+{#    {% endfor %}#}
+{#</ul>#}
+{#{% endspaceless %}#}
+{#{% endif %}#}
+{#{% endblock blog_post_detail_keywords %}#}
+
+<!-- pagination unnecessary -->
+{#{% block blog_post_previous_next %}#}
+{#<ul class="pager">#}
+{#{% with blog_post.get_previous_by_publish_date as previous %}#}
+{#{% if previous %}#}
+{#<li class="previous">#}
+{#    <a href="{{ previous.get_absolute_url }}">&larr; {{ previous }}</a>#}
+{#</li>#}
+{#{% endif %}#}
+{#{% endwith %}#}
+{#{% with blog_post.get_next_by_publish_date as next %}#}
+{#{% if next %}#}
+{#<li class="next">#}
+{#    <a href="{{ next.get_absolute_url }}">{{ next }} &rarr;</a>#}
+{#</li>#}
+{#{% endif %}#}
+{#{% endwith %}#}
+{#</ul>#}
+{#{% endblock blog_post_previous_next %}#}
+
+
+
+
+
+<!-- share buttons -->
+{#{% block blog_post_detail_sharebuttons %}#}
+{#    {% set_short_url_for blog_post %}#}
+{#    <div id="share"></div>#}
+{#<a class="btn btn-sm share-twitter" target="_blank" href="http://twitter.com/home?status={{ blog_post.short_url|urlencode }}%20{{ blog_post.title|urlencode }}"><i class="fa fa-twitter-square" aria-hidden="true"></i>#}
+{#</a>#}
+{#<a class="btn btn-sm share-facebook" target="_blank" href="http://facebook.com/sharer.php?u={{ request.build_absolute_uri }}&amp;t={{ blog_post.title|urlencode }}"><i class="fa fa-facebook-square" aria-hidden="true"></i>#}
+{#</a>#}
+{#{% endblock blog_post_detail_sharebuttons %}#}
+</div>
+{% endblock center %}
+
+
+{% block right_side %}
+<!-- right side bar with links to related posts -->
+{#<div class="col-md-3">#}
+{#{% block blog_post_detail_related_posts %}#}
+{#{% if related_posts %}#}
+{#<div id="related-posts">#}
+{#<h3 id="blog-rel-post-title">{% trans 'Related posts' %}</h3>#}
+{#<ul class="list-unstyled">#}
+{#{% for post in related_posts|slice:":3" %}#}
+{#     <li class="blog-rel-post"><a href="{{ post.get_absolute_url }}">#}
+{#         <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail post.featured_image 240 200 %}">#}
+{#         <p>{{ post.title }}</p>#}
+{#     </a></li>#}
+{#{% endfor %}#}
+{#</ul>#}
+{#</div>#}
+{#{% endif %}#}
+{#{% endblock blog_post_detail_related_posts %}#}
+{#</div>#}
+{#<!-- end right side bar -->#}
+{##}
+{##}
+{##}
+{#<div class="col-md-1"><!--empty--></div>#}
+{% endblock right_side %}
+
+
+{% block footer_js %}
+{{ block.super }}
+
+{% endblock footer_js %}
+{#    http://dev.wechat.com/wechatapi/messages-moments#}

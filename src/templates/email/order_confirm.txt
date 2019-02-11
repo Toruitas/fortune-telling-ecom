@@ -1,0 +1,13 @@
+{% extends "email/base.txt" %}
+{% load i18n %}
+
+{% block main %}
+{% trans "Your order has shipped!" %}
+
+{% trans 'Find your shipment details here: ' %}{{ order.shipping_url }}
+{% trans 'Your tracking number: ' %}{{ order.shipping_id }}
+
+{% trans "Master Kiki thanks you wholeheartedly" %}
+
+{% trans "Please email us for any changes or cancelations." %} {{ SHOP_ORDER_FROM_EMAIL }}
+{% endblock %}

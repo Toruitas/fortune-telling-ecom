@@ -1,0 +1,14 @@
+{% extends "email/base.html" %}
+
+{% block main %}
+
+<h4>Dear Master Kiki,</h4>
+<h3>{{ name }} sent this message</h3>
+<p>Email: {{ from_email }}</p>
+<p>Subject: {{ subject }}</p>
+<b>Message:</b>
+<p>{{ message }}</p>
+
+<p>Please do not reply to this email, it won't go anywhere.</p>
+
+{% endblock %}
